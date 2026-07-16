@@ -33,9 +33,23 @@ chmod +x start.sh
 
 ## 部署
 
-静态站点，无需构建。推荐 [Cloudflare Pages](https://pages.cloudflare.com/) 或 GitHub Pages。
+静态站点，无需构建。推荐 **GitHub Pages**（免费）。
 
-推送 `main` 分支后 GitHub Actions 自动部署（见 `.github/workflows/deploy.yml`）。
+### 在线地址（部署后）
+
+**https://hhonghua2008.github.io/honor_card**
+
+### 一键部署
+
+```bash
+brew install gh          # 若未安装
+gh auth login            # 浏览器授权一次
+./scripts/deploy-github.sh
+```
+
+推送 `main` 后 GitHub Actions 自动部署（见 `.github/workflows/deploy.yml`）。
+
+也支持 [Vercel](https://vercel.com) / [Netlify](https://netlify.com) / [Cloudflare Pages](https://pages.cloudflare.com)（已含 `vercel.json`、`netlify.toml`、`_headers`）。
 
 ## 隐私
 
