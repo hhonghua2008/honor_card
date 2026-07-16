@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://honorcard.app/sitemap.xml
+Sitemap: https://hhonghua2008.github.io/honor_card/sitemap.xml
