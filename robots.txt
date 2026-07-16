@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://honorcard.app/sitemap.xml

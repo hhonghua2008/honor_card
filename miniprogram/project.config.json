@@ -1,0 +1,11 @@
+{
+  "description": "HonorCard 奖状制作",
+  "setting": {
+    "urlCheck": false,
+    "es6": true,
+    "minified": true
+  },
+  "appid": "touristappid",
+  "projectname": "honorcard",
+  "compileType": "miniprogram"
+}

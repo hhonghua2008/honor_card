@@ -1,0 +1,15 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/editor/editor",
+    "pages/pricing/pricing"
+  ],
+  "window": {
+    "navigationBarTitleText": "HonorCard",
+    "navigationBarBackgroundColor": "#8e1c22",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#f5efe3"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

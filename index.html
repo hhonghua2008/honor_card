@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HonorCard · 专业奖状证书在线制作</title>
+  <meta name="description" content="HonorCard 专业奖状制作平台：28+精美模板，批量生成，Logo定制，高清无水印导出。教师、HR、活动组织者首选。">
+  <meta property="og:title" content="HonorCard · 专业奖状证书在线制作">
+  <meta property="og:description" content="比 Word 好看，比 Canva 简单。免费开始，Pro 解锁全部能力。">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/og-cover.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+  <script>window.HC_GA_ID = ''; /* 填入 GA4 ID 如 G-XXXXXXXX */</script>
+  <!-- 启用云端 API：取消下行注释并启动 server/ -->
+  <!-- <script>window.HC_API_URL = 'http://127.0.0.1:8788';</script> -->
+</head>
+<body>
+  <header class="hc-header">
+    <a href="#/" class="brand-link">
+      <img src="assets/logo.svg" alt="" class="brand-logo" width="28" height="28">
+      <span class="brand">HonorCard</span>
+    </a>
+    <nav>
+      <a href="#/">首页</a>
+      <a href="#/templates">模板</a>
+      <a href="#/guides">指南</a>
+      <a href="#/projects">我的项目</a>
+      <a href="#/pricing">定价</a>
+      <span id="authSlot"></span>
+      <span id="proBadgeSlot"></span>
+    </nav>
+  </header>
+  <main id="view"></main>
+  <footer class="hc-footer">
+    <a href="#/privacy">隐私说明</a> ·
+    <a href="#/terms">使用条款</a> ·
+    <a href="#" id="feedbackLink">反馈建议</a> ·
+    <span id="hcVersion"></span>
+  </footer>
+
+  <script src="assets/vendor/jszip.min.js"></script>
+  <script src="assets/vendor/xlsx.full.min.js"></script>
+  <script src="assets/vendor/fabric.min.js"></script>
+  <script src="assets/vendor/jspdf.umd.min.js"></script>
+  <script src="assets/vendor/pako.min.js"></script>
+  <script src="js/data/templates.js"></script>
+  <script src="js/data/seo-pages.js"></script>
+  <script src="js/lib/api.js"></script>
+  <script src="js/lib/auth.js"></script>
+  <script src="js/lib/cloud.js"></script>
+  <script src="js/lib/catalog.js"></script>
+  <script src="js/lib/gallery-preview.js"></script>
+  <script src="js/lib/ui.js"></script>
+  <script src="js/lib/plan.js"></script>
+  <script src="js/lib/watermark.js"></script>
+  <script src="js/lib/analytics.js"></script>
+  <script src="js/lib/storage.js"></script>
+  <script src="js/lib/share.js"></script>
+  <script src="js/lib/export.js"></script>
+  <script src="js/onboarding.js"></script>
+  <script src="js/batch.js"></script>
+  <script src="js/pricing.js"></script>
+  <script src="js/landing.js"></script>
+  <script src="js/seo.js"></script>
+  <script src="js/account.js"></script>
+  <script src="js/team.js"></script>
+  <script src="js/ops.js"></script>
+  <script src="js/admin.js"></script>
+  <script src="js/editor.js"></script>
+  <script src="js/share-view.js"></script>
+  <script src="js/gallery.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    document.getElementById('hcVersion').textContent = 'v' + (window.HC_VERSION || '1.2.0');
+    document.getElementById('feedbackLink').onclick = function(e) {
+      e.preventDefault();
+      window.HC_UI.modal({
+        title: '反馈与建议',
+        body: '<p style="margin:0 0 12px">您的反馈对我们非常重要，请发送邮件至：</p><p><a href="mailto:hello@honorcard.app">hello@honorcard.app</a></p><p style="font-size:12px;color:#999">或通过小红书 / 微信社群联系我们（即将开放）</p>',
+        buttons: [{ label: '关闭', primary: true }]
+      });
+      window.HC_Analytics && window.HC_Analytics.track('feedback_open');
+    };
+  </script>
+</body>
+</html>

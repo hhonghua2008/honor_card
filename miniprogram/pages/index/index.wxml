@@ -1,0 +1,15 @@
+<view class="hero">
+  <text class="title">HonorCard 奖状</text>
+  <text class="sub">选模板 · 改内容 · 一键导出</text>
+</view>
+<view class="actions">
+  <button class="btn-pro" bindtap="goPricing">Pro 会员</button>
+</view>
+<view class="grid">
+  <view class="card" wx:for="{{list}}" wx:key="id" bindtap="openTpl" data-id="{{item.id}}">
+    <view class="thumb">{{item.name[0]}}</view>
+    <text class="name">{{item.name}}</text>
+    <text class="cat">{{item.category}}</text>
+  </view>
+</view>
+<view wx:if="{{loading}}" class="loading">加载中…</view>

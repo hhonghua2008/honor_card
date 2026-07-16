@@ -1,0 +1,12 @@
+.DS_Store
+.workbuddy/
+node_modules/
+test/shots/
+test/node_modules/
+server/node_modules/
+server/data.json
+server/uploads/
+
+# 模板生成中间产物（不部署）
+assets/templates/_gen/
+assets/templates/l13/
