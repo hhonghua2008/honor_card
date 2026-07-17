@@ -243,11 +243,15 @@
       if (hasH) layers.push(txt('honor', honor, 680, 430, { fontSize: 44, fontWeight: 'bold', fontFamily: SERIF, fill: accentFill(t), originX: 'center', textAlign: 'center' }));
       layers.push(box('closing', c.closing, 400, 572, 560, { fontSize: 28, fontFamily: SANS, fill: bodyFill(t), lineHeight: 1.5, originX: 'left', textAlign: 'left' }));
     } else {
-      if (c.label) layers.push(txt('recipient_label', c.label, M, 190, { fontSize: 22, fontFamily: SANS, fill: bodyFill(t), originX: 'left', textAlign: 'left' }));
-      layers.push(txt('recipient', recipient, M, c.label ? 270 : 230, { fontSize: 48, fontWeight: 'bold', fontFamily: SERIF, fill: bodyFill(t), originX: 'left', textAlign: 'left' }));
-      layers.push(box('reason', c.reason, M, 370, W - 2 * M, { fontSize: 34, fontFamily: SANS, fill: bodyFill(t), lineHeight: 1.5, originX: 'left', textAlign: 'left' }));
-      if (hasH) layers.push(txt('honor', honor, cx, 480, { fontSize: 46, fontWeight: 'bold', fontFamily: SERIF, fill: accentFill(t) }));
-      layers.push(box('closing', c.closing, M, 602, W - 2 * M, { fontSize: 32, fontFamily: SANS, fill: bodyFill(t), lineHeight: 1.5, originX: 'left', textAlign: 'left' }));
+      const recTop = opts.recipientTop != null ? opts.recipientTop : (c.label ? 270 : 230);
+      const reasonTop = opts.reasonTop != null ? opts.reasonTop : 370;
+      const honorTop = opts.honorTop != null ? opts.honorTop : 480;
+      const closingTop = opts.closingTop != null ? opts.closingTop : 602;
+      if (c.label) layers.push(txt('recipient_label', c.label, M, opts.labelTop != null ? opts.labelTop : 190, { fontSize: 22, fontFamily: SANS, fill: bodyFill(t), originX: 'left', textAlign: 'left' }));
+      layers.push(txt('recipient', recipient, M, recTop, { fontSize: 48, fontWeight: 'bold', fontFamily: SERIF, fill: bodyFill(t), originX: 'left', textAlign: 'left' }));
+      layers.push(box('reason', c.reason, M, reasonTop, W - 2 * M, { fontSize: 34, fontFamily: SANS, fill: bodyFill(t), lineHeight: 1.5, originX: 'left', textAlign: 'left' }));
+      if (hasH) layers.push(txt('honor', honor, cx, honorTop, { fontSize: opts.honorSize || 46, fontWeight: 'bold', fontFamily: SERIF, fill: accentFill(t) }));
+      layers.push(box('closing', c.closing, M, closingTop, W - 2 * M, { fontSize: 32, fontFamily: SANS, fill: bodyFill(t), lineHeight: 1.5, originX: 'left', textAlign: 'left' }));
     }
     const issuerY = opts.issuerY != null ? opts.issuerY : (hasH ? H - 102 : H - 82);
     const dateY = opts.dateY != null ? opts.dateY : (hasH ? H - 60 : H - 44);
@@ -489,10 +493,12 @@
       issuer: '海洋探险队' }),
 
     // —— 经典校园横版（对标主流小程序「经典奖状」）——
+    // 经典横版：标题须在顶饰（红星/金徽）下方空白区，对标主流小程序排版
     buildLand({
       id: 'tpl-29', name: '经典绿边红星', bg: 'tpl-29-land-classic-green.png',
-      title: '奖状', titleSize: 64, titleTop: 100,
+      title: '奖状', titleSize: 68, titleTop: 218,
       canvasW: 1216, canvasH: 812, margin: 220,
+      recipientTop: 300, reasonTop: 390, honorTop: 500, closingTop: 590, honorSize: 52,
       category: '经典奖状（横版）', sceneCategory: 'campus',
       suffix: '同学',
       reason: '在2024-2025学年第二学期中表现优秀，被评为',
@@ -508,8 +514,9 @@
 
     buildLand({
       id: 'tpl-30', name: '经典红金牡丹', bg: 'tpl-30-land-classic-peony.png',
-      title: '奖状', titleSize: 64, titleTop: 100,
+      title: '奖状', titleSize: 68, titleTop: 228,
       canvasW: 1216, canvasH: 812, margin: 220,
+      recipientTop: 310, reasonTop: 400, honorTop: 510, closingTop: 600, honorSize: 52,
       category: '经典奖状（横版）', sceneCategory: 'campus',
       suffix: '同学',
       reason: '在2024-2025学年第二学期中表现优秀，被评为',
