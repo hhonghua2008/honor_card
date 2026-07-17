@@ -491,7 +491,8 @@
     // —— 经典校园横版（对标主流小程序「经典奖状」）——
     buildLand({
       id: 'tpl-29', name: '经典绿边红星', bg: 'tpl-29-land-classic-green.png',
-      titleInBg: true, canvasW: 1216, canvasH: 812, margin: 220,
+      title: '奖状', titleSize: 64, titleTop: 100,
+      canvasW: 1216, canvasH: 812, margin: 220,
       category: '经典奖状（横版）', sceneCategory: 'campus',
       suffix: '同学',
       reason: '在2024-2025学年第二学期中表现优秀，被评为',
@@ -507,7 +508,8 @@
 
     buildLand({
       id: 'tpl-30', name: '经典红金牡丹', bg: 'tpl-30-land-classic-peony.png',
-      titleInBg: true, canvasW: 1216, canvasH: 812, margin: 220,
+      title: '奖状', titleSize: 64, titleTop: 100,
+      canvasW: 1216, canvasH: 812, margin: 220,
       category: '经典奖状（横版）', sceneCategory: 'campus',
       suffix: '同学',
       reason: '在2024-2025学年第二学期中表现优秀，被评为',

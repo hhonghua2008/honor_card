@@ -5007,6 +5007,23 @@ module.exports = {
       "layers": [
         {
           "type": "text",
+          "id": "title",
+          "text": "奖状",
+          "left": 608,
+          "top": 100,
+          "width": 0,
+          "fontSize": 64,
+          "fontWeight": "bold",
+          "fill": "#c1272d",
+          "textAlign": "center",
+          "originX": "center",
+          "originY": "center",
+          "lineHeight": 1.5,
+          "charSpacing": 900,
+          "serif": true
+        },
+        {
+          "type": "text",
           "id": "recipient",
           "text": "张小明 同学：",
           "left": 220,
@@ -5147,6 +5164,23 @@ module.exports = {
         "sealText": "光明小学五年级一班"
       },
       "layers": [
+        {
+          "type": "text",
+          "id": "title",
+          "text": "奖状",
+          "left": 608,
+          "top": 100,
+          "width": 0,
+          "fontSize": 64,
+          "fontWeight": "bold",
+          "fill": "#c1272d",
+          "textAlign": "center",
+          "originX": "center",
+          "originY": "center",
+          "lineHeight": 1.5,
+          "charSpacing": 900,
+          "serif": true
+        },
         {
           "type": "text",
           "id": "recipient",
