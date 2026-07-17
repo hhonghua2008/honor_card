@@ -1,6 +1,7 @@
 const catalog = require('../../utils/catalog');
 const { renderCertificate } = require('../../utils/draw');
 const projects = require('../../utils/projects');
+const cloud = require('../../utils/cloud');
 
 Page({
   data: {
@@ -206,7 +207,7 @@ Page({
     if (photoPath && photoPath !== this.data.photoPath) {
       this.setData({ photoPath });
     }
-    projects.upsert({
+    const proj = projects.upsert({
       id: this._projId,
       tplId: this.data.tplId,
       name: (this.data.fields.name || '未命名') + ' · ' + this.data.tplName,
@@ -214,7 +215,12 @@ Page({
       photoPath,
       thumb: this._tpl.thumbUrl
     });
-    wx.showToast({ title: '已保存到「我的」', icon: 'success' });
+    if (cloud.enabled()) {
+      const r = await cloud.pushOne(proj);
+      wx.showToast({ title: r.ok ? '已保存并同步云端' : '已保存（云同步失败）', icon: 'none' });
+    } else {
+      wx.showToast({ title: '已保存到「我的」', icon: 'success' });
+    }
   },
 
   goBatch() {
