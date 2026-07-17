@@ -178,8 +178,83 @@ function roundRect(ctx, x, y, w, h, r) {
   ctx.closePath();
 }
 
+function drawPhotoPlaceholder(ctx, photo) {
+  const w = photo.width;
+  const h = photo.height;
+  const x = photo.left - w / 2;
+  const y = photo.top - h / 2;
+  const cx = photo.left;
+  const cy = photo.top;
+
+  ctx.save();
+  // 底色
+  ctx.fillStyle = 'rgba(255,248,232,0.92)';
+  if (photo.mask === 'circle') {
+    ctx.beginPath();
+    ctx.arc(cx, cy, Math.min(w, h) / 2, 0, Math.PI * 2);
+    ctx.fill();
+  } else {
+    roundRect(ctx, x, y, w, h, photo.mask === 'rounded' ? Math.min(w, h) * 0.12 : 8);
+    ctx.fill();
+  }
+
+  // 虚线框
+  ctx.strokeStyle = 'rgba(142,28,34,0.55)';
+  ctx.lineWidth = Math.max(3, Math.min(w, h) * 0.02);
+  ctx.setLineDash([10, 8]);
+  if (photo.mask === 'circle') {
+    ctx.beginPath();
+    ctx.arc(cx, cy, Math.min(w, h) / 2 - 4, 0, Math.PI * 2);
+    ctx.stroke();
+  } else {
+    roundRect(ctx, x + 4, y + 4, w - 8, h - 8, photo.mask === 'rounded' ? 12 : 6);
+    ctx.stroke();
+  }
+  ctx.setLineDash([]);
+
+  // 简易头像剪影
+  const r = Math.min(w, h) * 0.14;
+  ctx.fillStyle = 'rgba(154,123,63,0.45)';
+  ctx.beginPath();
+  ctx.arc(cx, cy - r * 0.55, r, 0, Math.PI * 2);
+  ctx.fill();
+  // 肩部（兼容无 ellipse 的基础库）
+  ctx.beginPath();
+  ctx.moveTo(cx - r * 1.55, cy + r * 2.1);
+  ctx.quadraticCurveTo(cx - r * 1.55, cy + r * 0.35, cx, cy + r * 0.35);
+  ctx.quadraticCurveTo(cx + r * 1.55, cy + r * 0.35, cx + r * 1.55, cy + r * 2.1);
+  ctx.closePath();
+  ctx.fill();
+
+  // 提示文案
+  ctx.fillStyle = '#8e1c22';
+  ctx.font = 'bold ' + Math.max(18, Math.floor(Math.min(w, h) * 0.11)) + 'px sans-serif';
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'middle';
+  ctx.fillText('添加照片', cx, cy + Math.min(w, h) * 0.32);
+
+  // 金色外框（与有照片时一致）
+  if (photo.frame) {
+    ctx.strokeStyle = 'rgba(243,210,122,0.95)';
+    ctx.lineWidth = Math.max(6, Math.min(w, h) * 0.03);
+    if (photo.mask === 'circle') {
+      ctx.beginPath();
+      ctx.arc(cx, cy, Math.min(w, h) / 2 + 2, 0, Math.PI * 2);
+      ctx.stroke();
+    } else {
+      roundRect(ctx, x - 2, y - 2, w + 4, h + 4, photo.mask === 'rounded' ? 16 : 4);
+      ctx.stroke();
+    }
+  }
+  ctx.restore();
+}
+
 async function drawPhoto(ctx, canvas, photo, photoPath) {
-  if (!photo || !photoPath) return;
+  if (!photo) return;
+  if (!photoPath) {
+    drawPhotoPlaceholder(ctx, photo);
+    return;
+  }
   const img = await loadImage(canvas, photoPath);
   const w = photo.width;
   const h = photo.height;
@@ -241,6 +316,7 @@ function applyFieldsToLayers(layers, fields) {
 
 async function renderCertificate(opts) {
   const { canvas, ctx, tpl, fields, bgPath, photoPath } = opts;
+  const showPhotoPlaceholder = opts.showPhotoPlaceholder !== false;
   const W = tpl.canvas.w;
   const H = tpl.canvas.h;
   ctx.clearRect(0, 0, W, H);
@@ -252,8 +328,12 @@ async function renderCertificate(opts) {
 
   const layers = applyFieldsToLayers(tpl.layers, fields);
   const photo = layers.find(l => l.type === 'photo');
-  if (photo && photoPath) {
-    await drawPhoto(ctx, canvas, photo, photoPath);
+  if (photo) {
+    if (photoPath) {
+      await drawPhoto(ctx, canvas, photo, photoPath);
+    } else if (showPhotoPlaceholder) {
+      drawPhotoPlaceholder(ctx, photo);
+    }
   }
 
   layers.forEach(l => {

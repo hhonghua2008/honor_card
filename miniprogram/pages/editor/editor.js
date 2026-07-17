@@ -29,15 +29,14 @@ Page({
     thumbUrl: '',
     showThumb: true,
     rendering: false,
-    loadHint: '正在加载模板…',
-    tip: ''
+    loadHint: ''
   },
 
   _tpl: null,
   _canvas: null,
   _ctx: null,
-  _bgPath: '',
-  _bgPromise: null,
+  _exportBgPath: '',
+  _exportBgPromise: null,
   _projId: '',
   _timer: null,
   _dispW: 300,
@@ -77,8 +76,9 @@ Page({
     if (!fields.sealText) fields.sealText = fields.issuer || tpl.defaults.sealText || '荣誉专用章';
     if (fields.label == null) fields.label = tpl.defaults.label || '';
 
-    // 立刻展示缩略图占位；同时开始下背景（与画布初始化并行）
-    this._bgPromise = assetCache.getCachedFile(tpl.bgUrl, 'bg_' + tpl.id);
+    // 导出用清晰背景后台预取，不挡首屏
+    this._exportBgPromise = assetCache.getCachedFile(tpl.bgUrl, 'bg_' + tpl.id);
+    this._exportBgPromise.then(p => { this._exportBgPath = p; }).catch(() => {});
 
     const titleInBg = !(tpl.layers || []).some(l => l.type === 'text' && l.id === 'title');
     this.setData({
@@ -92,7 +92,7 @@ Page({
       photoPath,
       thumbUrl: tpl.thumbUrl,
       showThumb: true,
-      loadHint: '正在加载高清预览…',
+      loadHint: '',
       canvasStyle: 'width:' + this._dispW + 'px;height:' + this._dispH + 'px;'
     });
     wx.setNavigationBarTitle({ title: tpl.name });
@@ -122,21 +122,15 @@ Page({
   },
 
   onReady() {
-    Promise.all([this.initCanvas(false), this._bgPromise])
-      .then(([, bgPath]) => {
-        this._bgPath = bgPath;
-        return this.doRender(true);
-      })
+    // 预览只用缩略图（列表已加载，通常很快），不再等「高清」背景
+    this.initCanvas(false)
+      .then(() => this.doRender(true))
       .then(() => {
         this.setData({ showThumb: false, loadHint: '' });
       })
       .catch(err => {
         console.error(err);
-        this.setData({
-          loadHint: '高清预览加载失败，可检查网络后重试',
-          showThumb: true
-        });
-        wx.showToast({ title: '预览加载慢/失败', icon: 'none' });
+        this.setData({ loadHint: '预览加载失败，请检查网络后重试' });
       });
   },
 
@@ -144,9 +138,6 @@ Page({
     if (this._timer) clearTimeout(this._timer);
   },
 
-  /**
-   * @param {boolean} full 是否全分辨率（导出用）
-   */
   initCanvas(full) {
     const tpl = this._tpl;
     return new Promise((resolve, reject) => {
@@ -168,7 +159,6 @@ Page({
             ctx.scale(dpr, dpr);
             this._exportMode = true;
           } else {
-            // 预览只按屏幕宽度绘制，大幅降低首屏耗时
             canvas.width = this._dispW * dpr;
             canvas.height = this._dispH * dpr;
             ctx.setTransform(1, 0, 0, 1, 0, 0);
@@ -182,32 +172,36 @@ Page({
     });
   },
 
-  ensureBg() {
-    if (this._bgPath) return Promise.resolve(this._bgPath);
-    if (!this._bgPromise) {
-      this._bgPromise = assetCache.getCachedFile(this._tpl.bgUrl, 'bg_' + this._tpl.id);
+  /** 预览背景：缩略图 URL（小、快） */
+  previewBg() {
+    return this._tpl.thumbUrl;
+  },
+
+  /** 导出背景：压缩 JPEG（后台已预取） */
+  ensureExportBg() {
+    if (this._exportBgPath) return Promise.resolve(this._exportBgPath);
+    if (!this._exportBgPromise) {
+      this._exportBgPromise = assetCache.getCachedFile(this._tpl.bgUrl, 'bg_' + this._tpl.id);
     }
-    return this._bgPromise.then(p => {
-      this._bgPath = p;
+    return this._exportBgPromise.then(p => {
+      this._exportBgPath = p;
       return p;
     });
   },
 
   scheduleRender(delay) {
     if (this._timer) clearTimeout(this._timer);
-    this._timer = setTimeout(() => this.doRender(false), delay == null ? 180 : delay);
+    this._timer = setTimeout(() => this.doRender(false), delay == null ? 160 : delay);
   },
 
   async doRender(isFirst) {
     if (!this._canvas || !this._ctx || !this._tpl) return;
     if (this.data.rendering && !isFirst) {
-      this.scheduleRender(120);
+      this.scheduleRender(100);
       return;
     }
     this.setData({ rendering: true });
     try {
-      const bgPath = await this.ensureBg();
-      // 若上次导出切到了全分辨率，预览前切回低分辨率
       if (this._exportMode && !isFirst) {
         await this.initCanvas(false);
       }
@@ -216,8 +210,9 @@ Page({
         ctx: this._ctx,
         tpl: this._tpl,
         fields: this.data.fields,
-        bgPath,
-        photoPath: this.data.photoPath || ''
+        bgPath: this.previewBg(),
+        photoPath: this.data.photoPath || '',
+        showPhotoPlaceholder: true
       });
     } catch (e) {
       console.error('render fail', e);
@@ -243,7 +238,7 @@ Page({
       sourceType: ['album', 'camera'],
       success: res => {
         const path = res.tempFiles[0].tempFilePath;
-        this.setData({ photoPath: path });
+        this.setData({ photoPath: path, editTab: 'photo' });
         this.scheduleRender(50);
       }
     });
@@ -296,14 +291,15 @@ Page({
     wx.showLoading({ title: '导出中', mask: true });
     try {
       await this.initCanvas(true);
-      const bgPath = await this.ensureBg();
+      const bgPath = await this.ensureExportBg();
       await renderCertificate({
         canvas: this._canvas,
         ctx: this._ctx,
         tpl: this._tpl,
         fields: this.data.fields,
         bgPath,
-        photoPath: this.data.photoPath || ''
+        photoPath: this.data.photoPath || '',
+        showPhotoPlaceholder: false
       });
       await new Promise((resolve, reject) => {
         wx.canvasToTempFilePath({
@@ -320,7 +316,6 @@ Page({
                 if (a.tapIndex === 1) this.shareImage(res.tempFilePath);
               },
               complete: () => {
-                // 恢复预览分辨率
                 this.initCanvas(false).then(() => this.doRender(false));
               }
             });

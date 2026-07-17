@@ -7,7 +7,7 @@
       mode="aspectFill"
     />
     <canvas type="2d" id="certCanvas" class="canvas" style="{{canvasStyle}};{{showThumb ? 'opacity:0;' : ''}}"></canvas>
-    <view wx:if="{{loadHint || rendering}}" class="preview-mask">{{loadHint || '更新中…'}}</view>
+    <view wx:if="{{loadHint}}" class="preview-mask">{{loadHint}}</view>
   </view>
 
   <view class="tabs">
