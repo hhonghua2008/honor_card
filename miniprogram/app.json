@@ -1,7 +1,9 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/projects/projects",
     "pages/editor/editor",
+    "pages/web/web",
     "pages/pricing/pricing"
   ],
   "window": {
@@ -10,6 +12,23 @@
     "navigationBarTextStyle": "white",
     "backgroundColor": "#f5efe3"
   },
+  "tabBar": {
+    "color": "#9a7b3f",
+    "selectedColor": "#8e1c22",
+    "backgroundColor": "#fffaf0",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "模板"
+      },
+      {
+        "pagePath": "pages/projects/projects",
+        "text": "我的"
+      }
+    ]
+  },
   "style": "v2",
-  "sitemapLocation": "sitemap.json"
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
 }

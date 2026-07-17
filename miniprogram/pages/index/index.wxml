@@ -1,15 +1,55 @@
-<view class="hero">
-  <text class="title">HonorCard 奖状</text>
-  <text class="sub">选模板 · 改内容 · 一键导出</text>
-</view>
-<view class="actions">
-  <button class="btn-pro" bindtap="goPricing">Pro 会员</button>
-</view>
-<view class="grid">
-  <view class="card" wx:for="{{list}}" wx:key="id" bindtap="openTpl" data-id="{{item.id}}">
-    <view class="thumb">{{item.name[0]}}</view>
-    <text class="name">{{item.name}}</text>
-    <text class="cat">{{item.category}}</text>
+<view class="page">
+  <view class="hero">
+    <text class="title">选择奖状模板</text>
+    <text class="sub">共 {{total}} 套 · 点选即编辑 · 支持导出 PNG / PDF</text>
   </view>
+
+  <view class="toolbar">
+    <input class="search" placeholder="搜索模板，如：红金、横版、小熊…" bindinput="onSearchInput" value="{{keyword}}" />
+    <view class="links">
+      <text class="link" bindtap="openGuides">制作指南</text>
+      <text class="dot">·</text>
+      <text class="link" bindtap="openPricing">Pro 说明</text>
+    </view>
+  </view>
+
+  <scroll-view scroll-x class="filters" enable-flex>
+    <view class="filter-row">
+      <view
+        wx:for="{{sceneFilters}}"
+        wx:key="key"
+        class="chip {{scene === item.key ? 'active' : ''}}"
+        data-key="{{item.key}}"
+        bindtap="onSceneTap"
+      >{{item.label}} ({{sceneCounts[item.key] || 0}})</view>
+    </view>
+  </scroll-view>
+
+  <scroll-view scroll-x class="filters filters-sub" enable-flex>
+    <view class="filter-row">
+      <view
+        wx:for="{{orientFilters}}"
+        wx:key="key"
+        class="chip {{orient === item.key ? 'active' : ''}}"
+        data-key="{{item.key}}"
+        bindtap="onOrientTap"
+      >{{item.label}} ({{orientCounts[item.key] || 0}})</view>
+    </view>
+  </scroll-view>
+
+  <view class="hint" wx:if="{{list.length}}">当前 {{list.length}} 个模板</view>
+  <view class="hint empty" wx:elif="{{!loading}}">没有匹配的模板，换个关键词试试</view>
+
+  <view class="grid">
+    <view class="card" wx:for="{{list}}" wx:key="id" bindtap="openTpl" data-id="{{item.id}}">
+      <view class="thumb-wrap {{item.landscape ? 'land' : ''}}">
+        <image class="thumb" src="{{item.thumbUrl}}" mode="aspectFill" lazy-load />
+        <text class="badge">{{item.landscape ? '横版' : '竖版'}}</text>
+      </view>
+      <text class="name">{{item.name}}</text>
+      <text class="cat">{{item.category}}</text>
+    </view>
+  </view>
+
+  <view wx:if="{{loading}}" class="loading">加载模板…</view>
 </view>
-<view wx:if="{{loading}}" class="loading">加载中…</view>

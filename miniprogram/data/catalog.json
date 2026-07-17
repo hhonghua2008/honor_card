@@ -1,0 +1,258 @@
+{
+  "version": 1,
+  "count": 28,
+  "templates": [
+    {
+      "id": "tpl-01",
+      "name": "红金荣耀",
+      "category": "照片奖状",
+      "scene": "campus",
+      "sceneLabel": "校园表扬",
+      "landscape": false,
+      "thumb": "assets/templates/thumbs/tpl-01-red.jpg"
+    },
+    {
+      "id": "tpl-02",
+      "name": "粉彩童趣",
+      "category": "照片奖状",
+      "scene": "photo",
+      "sceneLabel": "照片奖状",
+      "landscape": false,
+      "thumb": "assets/templates/thumbs/tpl-02-pink.jpg"
+    },
+    {
+      "id": "tpl-03",
+      "name": "蓝金典藏",
+      "category": "荣誉证书",
+      "scene": "corporate",
+      "sceneLabel": "员工表彰",
+      "landscape": false,
+      "thumb": "assets/templates/thumbs/tpl-03-blue.jpg"
+    },
+    {
+      "id": "tpl-04",
+      "name": "翠绿荣光",
+      "category": "照片奖状",
+      "scene": "activity",
+      "sceneLabel": "活动荣誉",
+      "landscape": false,
+      "thumb": "assets/templates/thumbs/tpl-04-green.jpg"
+    },
+    {
+      "id": "tpl-05",
+      "name": "紫韵华章",
+      "category": "荣誉证书",
+      "scene": "corporate",
+      "sceneLabel": "员工表彰",
+      "landscape": false,
+      "thumb": "assets/templates/thumbs/tpl-05-purple.jpg"
+    },
+    {
+      "id": "tpl-06",
+      "name": "橙光暖意",
+      "category": "照片奖状",
+      "scene": "activity",
+      "sceneLabel": "活动荣誉",
+      "landscape": false,
+      "thumb": "assets/templates/thumbs/tpl-06-orange.jpg"
+    },
+    {
+      "id": "tpl-07",
+      "name": "宇宙蓝紫",
+      "category": "照片奖状",
+      "scene": "campus",
+      "sceneLabel": "校园表扬",
+      "landscape": false,
+      "thumb": "assets/templates/thumbs/tpl-07-cosmic.jpg"
+    },
+    {
+      "id": "tpl-08",
+      "name": "红金节日",
+      "category": "荣誉证书",
+      "scene": "festival",
+      "sceneLabel": "节日励志",
+      "landscape": false,
+      "thumb": "assets/templates/thumbs/tpl-08-festival.jpg"
+    },
+    {
+      "id": "tpl-09",
+      "name": "森林绿野",
+      "category": "照片奖状",
+      "scene": "campus",
+      "sceneLabel": "校园表扬",
+      "landscape": false,
+      "thumb": "assets/templates/thumbs/tpl-09-forest.jpg"
+    },
+    {
+      "id": "tpl-10",
+      "name": "香槟奢华",
+      "category": "荣誉证书",
+      "scene": "corporate",
+      "sceneLabel": "员工表彰",
+      "landscape": false,
+      "thumb": "assets/templates/thumbs/tpl-10-champagne.jpg"
+    },
+    {
+      "id": "tpl-11",
+      "name": "卡通童趣",
+      "category": "照片奖状",
+      "scene": "photo",
+      "sceneLabel": "照片奖状",
+      "landscape": false,
+      "thumb": "assets/templates/thumbs/tpl-11-cartoon.jpg"
+    },
+    {
+      "id": "tpl-12",
+      "name": "梦幻紫粉",
+      "category": "荣誉证书",
+      "scene": "campus",
+      "sceneLabel": "校园表扬",
+      "landscape": false,
+      "thumb": "assets/templates/thumbs/tpl-12-dream.jpg"
+    },
+    {
+      "id": "tpl-19",
+      "name": "典雅文凭",
+      "category": "荣誉证书",
+      "scene": "corporate",
+      "sceneLabel": "员工表彰",
+      "landscape": false,
+      "thumb": "assets/templates/thumbs/tpl-19-diploma.jpg"
+    },
+    {
+      "id": "tpl-20",
+      "name": "金色之星",
+      "category": "照片奖状",
+      "scene": "campus",
+      "sceneLabel": "校园表扬",
+      "landscape": false,
+      "thumb": "assets/templates/thumbs/tpl-20-star.jpg"
+    },
+    {
+      "id": "tpl-21",
+      "name": "牡丹师恩",
+      "category": "照片奖状",
+      "scene": "activity",
+      "sceneLabel": "活动荣誉",
+      "landscape": false,
+      "thumb": "assets/templates/thumbs/tpl-21-peony.jpg"
+    },
+    {
+      "id": "tpl-22",
+      "name": "暗夜精英",
+      "category": "照片奖状",
+      "scene": "corporate",
+      "sceneLabel": "员工表彰",
+      "landscape": false,
+      "thumb": "assets/templates/thumbs/tpl-22-noir.jpg"
+    },
+    {
+      "id": "tpl-13",
+      "name": "红金横版荣耀",
+      "category": "照片奖状（横版）",
+      "scene": "campus",
+      "sceneLabel": "校园表扬",
+      "landscape": true,
+      "thumb": "assets/templates/thumbs/tpl-13-land-red.jpg"
+    },
+    {
+      "id": "tpl-14",
+      "name": "蓝金横版商务",
+      "category": "荣誉证书（横版）",
+      "scene": "corporate",
+      "sceneLabel": "员工表彰",
+      "landscape": true,
+      "thumb": "assets/templates/thumbs/tpl-14-land-blue.jpg"
+    },
+    {
+      "id": "tpl-15",
+      "name": "翠绿横版运动",
+      "category": "照片奖状（横版）",
+      "scene": "activity",
+      "sceneLabel": "活动荣誉",
+      "landscape": true,
+      "thumb": "assets/templates/thumbs/tpl-15-land-green.jpg"
+    },
+    {
+      "id": "tpl-16",
+      "name": "紫韵横版艺术",
+      "category": "荣誉证书（横版）",
+      "scene": "corporate",
+      "sceneLabel": "员工表彰",
+      "landscape": true,
+      "thumb": "assets/templates/thumbs/tpl-16-land-purple.jpg"
+    },
+    {
+      "id": "tpl-17",
+      "name": "橙光横版志愿",
+      "category": "照片奖状（横版）",
+      "scene": "activity",
+      "sceneLabel": "活动荣誉",
+      "landscape": true,
+      "thumb": "assets/templates/thumbs/tpl-17-land-orange.jpg"
+    },
+    {
+      "id": "tpl-18",
+      "name": "粉彩横版童趣",
+      "category": "照片奖状（横版）",
+      "scene": "photo",
+      "sceneLabel": "照片奖状",
+      "landscape": true,
+      "thumb": "assets/templates/thumbs/tpl-18-land-pink.jpg"
+    },
+    {
+      "id": "tpl-23",
+      "name": "小熊抱星",
+      "category": "照片奖状（横版）",
+      "scene": "photo",
+      "sceneLabel": "照片奖状",
+      "landscape": true,
+      "thumb": "assets/templates/thumbs/tpl-23-land-bear.jpg"
+    },
+    {
+      "id": "tpl-24",
+      "name": "小兔彩虹",
+      "category": "照片奖状（横版）",
+      "scene": "photo",
+      "sceneLabel": "照片奖状",
+      "landscape": true,
+      "thumb": "assets/templates/thumbs/tpl-24-land-bunny.jpg"
+    },
+    {
+      "id": "tpl-25",
+      "name": "恐龙乐园",
+      "category": "照片奖状（横版）",
+      "scene": "photo",
+      "sceneLabel": "照片奖状",
+      "landscape": true,
+      "thumb": "assets/templates/thumbs/tpl-25-land-dino.jpg"
+    },
+    {
+      "id": "tpl-26",
+      "name": "独角兽星空",
+      "category": "荣誉证书（横版）",
+      "scene": "photo",
+      "sceneLabel": "照片奖状",
+      "landscape": true,
+      "thumb": "assets/templates/thumbs/tpl-26-land-unicorn.jpg"
+    },
+    {
+      "id": "tpl-27",
+      "name": "小猫气球",
+      "category": "照片奖状（横版）",
+      "scene": "photo",
+      "sceneLabel": "照片奖状",
+      "landscape": true,
+      "thumb": "assets/templates/thumbs/tpl-27-land-cat.jpg"
+    },
+    {
+      "id": "tpl-28",
+      "name": "海洋之星",
+      "category": "照片奖状（横版）",
+      "scene": "photo",
+      "sceneLabel": "照片奖状",
+      "landscape": true,
+      "thumb": "assets/templates/thumbs/tpl-28-land-ocean.jpg"
+    }
+  ]
+}

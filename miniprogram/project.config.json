@@ -1,11 +1,31 @@
 {
-  "description": "HonorCard 奖状制作",
+  "description": "HonorCard 奖状制作 · 个人版",
+  "miniprogramRoot": "./",
   "setting": {
-    "urlCheck": false,
+    "urlCheck": true,
     "es6": true,
-    "minified": true
+    "enhance": true,
+    "minified": true,
+    "postcss": true
   },
-  "appid": "touristappid",
+  "appid": "REPLACE_WITH_YOUR_APPID",
   "projectname": "honorcard",
-  "compileType": "miniprogram"
+  "compileType": "miniprogram",
+  "libVersion": "3.7.12",
+  "condition": {
+    "miniprogram": {
+      "list": [
+        {
+          "name": "模板首页",
+          "pathName": "pages/index/index",
+          "query": ""
+        },
+        {
+          "name": "编辑器 tpl-01",
+          "pathName": "pages/editor/editor",
+          "query": "tpl=tpl-01"
+        }
+      ]
+    }
+  }
 }

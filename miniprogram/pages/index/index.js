@@ -1,46 +1,90 @@
-const { h5Base, apiBase } = require('../../utils/config');
-
-const BUILTIN = [
-  { id: 'tpl-01', name: '红金荣耀', category: '照片奖状', scene: 'campus' },
-  { id: 'tpl-02', name: '粉彩童趣', category: '照片奖状', scene: 'photo' },
-  { id: 'tpl-03', name: '蓝金典藏', category: '荣誉证书', scene: 'corporate' },
-  { id: 'tpl-06', name: '橙光暖意', category: '照片奖状', scene: 'activity' },
-  { id: 'tpl-13', name: '红金横版荣耀', category: '横版', scene: 'campus' },
-  { id: 'tpl-23', name: '小熊抱星', category: '可爱横版', scene: 'photo' }
-];
+const {
+  SCENE_FILTERS,
+  ORIENT_FILTERS
+} = require('../../utils/config');
+const catalog = require('../../utils/catalog');
 
 Page({
-  data: { list: BUILTIN, loading: false },
-
-  onLoad() {
-    this.fetchCatalog();
+  data: {
+    allList: [],
+    list: [],
+    scene: 'all',
+    orient: 'all',
+    keyword: '',
+    sceneFilters: SCENE_FILTERS,
+    orientFilters: ORIENT_FILTERS,
+    sceneCounts: {},
+    orientCounts: {},
+    loading: true,
+    total: 28
   },
 
-  fetchCatalog() {
-    if (!apiBase) return;
+  onLoad() {
+    this.bootstrap();
+  },
+
+  onPullDownRefresh() {
+    this.bootstrap().finally(() => wx.stopPullDownRefresh());
+  },
+
+  async bootstrap() {
     this.setData({ loading: true });
-    wx.request({
-      url: apiBase + '/api/v1/catalog',
-      success: res => {
-        if (res.data && res.data.ok && res.data.catalog) {
-          const disabled = new Set(res.data.catalog.disabled || []);
-          let list = BUILTIN.filter(t => !disabled.has(t.id));
-          (res.data.catalog.custom || []).forEach(c => {
-            if (!disabled.has(c.id)) list.push({ id: c.id, name: c.name, category: c.category || '自定义' });
-          });
-          this.setData({ list });
-        }
-      },
-      complete: () => this.setData({ loading: false })
-    });
+    let allList = await catalog.fetchRemoteCatalog();
+    if (!allList) allList = catalog.loadBuiltin();
+    this._allList = allList;
+    this.applyFilters();
+    this.setData({ loading: false, total: allList.length, allList });
+  },
+
+  applyFilters() {
+    const allList = this._allList || [];
+    const { scene, orient, keyword } = this.data;
+    const list = catalog.filterList(allList, scene, orient, keyword);
+    const sceneCounts = catalog.countByScene(
+      catalog.filterList(allList, 'all', orient, keyword)
+    );
+    const orientCounts = catalog.countByOrient(
+      catalog.filterList(allList, scene, 'all', keyword)
+    );
+    this.setData({ list, sceneCounts, orientCounts });
+  },
+
+  onSearchInput(e) {
+    this.setData({ keyword: e.detail.value || '' });
+    this.applyFilters();
+  },
+
+  onSceneTap(e) {
+    this.setData({ scene: e.currentTarget.dataset.key });
+    this.applyFilters();
+  },
+
+  onOrientTap(e) {
+    this.setData({ orient: e.currentTarget.dataset.key });
+    this.applyFilters();
   },
 
   openTpl(e) {
     const id = e.currentTarget.dataset.id;
-    wx.navigateTo({ url: '/pages/editor/editor?tpl=' + id });
+    wx.navigateTo({ url: '/pages/editor/editor?tpl=' + encodeURIComponent(id) });
   },
 
-  goPricing() {
-    wx.navigateTo({ url: '/pages/pricing/pricing' });
+  openGuides() {
+    wx.navigateTo({ url: '/pages/web/web?title=' + encodeURIComponent('制作指南') + '&path=' + encodeURIComponent('guides') });
+  },
+
+  openPricing() {
+    wx.navigateTo({ url: '/pages/web/web?title=' + encodeURIComponent('Pro 说明') + '&path=' + encodeURIComponent('pricing') });
+  },
+
+  onShareAppMessage() {
+    return {
+      title: 'HonorCard · 免费在线奖状制作',
+      path: '/pages/index/index'
+    };
+  },
+
+  onShareTimeline() {
+    return { title: 'HonorCard · 免费在线奖状制作' };
   }
 });

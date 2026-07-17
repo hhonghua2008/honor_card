@@ -1,0 +1,2 @@
+<web-view wx:if="{{url}}" src="{{url}}"></web-view>
+<view wx:else class="err">加载失败，请检查 h5Base 与业务域名</view>
