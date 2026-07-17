@@ -27,11 +27,6 @@
       }
     ]
   },
-  "permission": {
-    "scope.writePhotosAlbum": {
-      "desc": "用于将制作好的奖状保存到手机相册"
-    }
-  },
   "style": "v2",
   "sitemapLocation": "sitemap.json",
   "lazyCodeLoading": "requiredComponents"

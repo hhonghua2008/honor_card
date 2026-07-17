@@ -114,7 +114,11 @@ const catalog = w.HC_TEMPLATES.map(t => {
   };
 });
 
-const out = path.join(root, 'miniprogram/data/catalog.json');
-fs.mkdirSync(path.dirname(out), { recursive: true });
-fs.writeFileSync(out, JSON.stringify({ version: 3, count: catalog.length, templates: catalog }, null, 2) + '\n');
-console.log('Wrote', catalog.length, 'templates (v3) →', out);
+const payload = { version: 3, count: catalog.length, templates: catalog };
+const dir = path.join(root, 'miniprogram/data');
+fs.mkdirSync(dir, { recursive: true });
+// 小程序不能稳定 require .json，同步输出 .js
+const outJs = path.join(dir, 'catalog.js');
+fs.writeFileSync(outJs, 'module.exports = ' + JSON.stringify(payload, null, 2) + ';\n');
+fs.writeFileSync(path.join(dir, 'catalog.json'), JSON.stringify(payload, null, 2) + '\n');
+console.log('Wrote', catalog.length, 'templates (v3) →', outJs);

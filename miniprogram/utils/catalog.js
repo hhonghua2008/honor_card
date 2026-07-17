@@ -1,4 +1,4 @@
-const catalogData = require('../data/catalog.json');
+const catalogData = require('../data/catalog.js');
 const { h5Base, apiBase } = require('./config');
 
 function assetUrl(rel) {
