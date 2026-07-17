@@ -1,7 +1,20 @@
 <view class="page">
-  <view class="tip">{{tip}}</view>
-  <button class="btn primary" bindtap="copyLink">复制「我的项目」链接</button>
-  <view class="help">
-    <text>项目数据存在浏览器本地（IndexedDB），请尽量用同一浏览器打开。</text>
+  <view wx:if="{{empty}}" class="empty">
+    <text class="t">还没有草稿</text>
+    <text class="s">在模板页选一套，编辑后点「保存草稿」</text>
+    <button class="btn primary" bindtap="goTemplates">去选模板</button>
+  </view>
+
+  <view wx:else class="list">
+    <view class="item" wx:for="{{list}}" wx:key="id">
+      <view class="main" bindtap="open" data-id="{{item.id}}">
+        <image class="thumb" src="{{item.thumb}}" mode="aspectFill" />
+        <view class="meta">
+          <text class="name">{{item.name}}</text>
+          <text class="sub">{{item.tplName}} · {{item.updatedText}}</text>
+        </view>
+      </view>
+      <text class="del" catchtap="remove" data-id="{{item.id}}">删除</text>
+    </view>
   </view>
 </view>

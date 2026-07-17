@@ -69,22 +69,14 @@ Page({
     wx.navigateTo({ url: '/pages/editor/editor?tpl=' + encodeURIComponent(id) });
   },
 
-  openGuides() {
-    wx.navigateTo({ url: '/pages/web/web?title=' + encodeURIComponent('制作指南') + '&path=' + encodeURIComponent('guides') });
-  },
-
-  openPricing() {
-    wx.navigateTo({ url: '/pages/web/web?title=' + encodeURIComponent('Pro 说明') + '&path=' + encodeURIComponent('pricing') });
-  },
-
   onShareAppMessage() {
     return {
-      title: 'HonorCard · 免费在线奖状制作',
+      title: '奖状模版大全 · 选模板改字就能导出',
       path: '/pages/index/index'
     };
   },
 
   onShareTimeline() {
-    return { title: 'HonorCard · 免费在线奖状制作' };
+    return { title: '奖状模版大全 · 选模板改字就能导出' };
   }
 });

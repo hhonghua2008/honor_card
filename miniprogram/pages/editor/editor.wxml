@@ -1,21 +1,60 @@
 <view class="page">
-  <view class="card">
-    <image wx:if="{{thumbUrl}}" class="thumb" src="{{thumbUrl}}" mode="aspectFill" />
-    <view class="meta">
-      <text class="name">{{name}}</text>
-      <text class="cat">{{category}}</text>
-    </view>
+  <view class="preview-wrap">
+    <canvas type="2d" id="certCanvas" class="canvas" style="{{canvasStyle}}"></canvas>
+    <view wx:if="{{rendering}}" class="preview-mask">绘制中…</view>
   </view>
 
   <view class="tip">{{tip}}</view>
 
-  <button class="btn primary" bindtap="copyLink">复制制作链接</button>
-  <button class="btn ghost" bindtap="openSite">复制模板站首页</button>
+  <view class="form">
+    <view class="row" wx:if="{{hasPhoto}}">
+      <text class="label">照片</text>
+      <view class="photo-actions">
+        <button size="mini" class="mini" bindtap="choosePhoto">{{photoPath ? '更换照片' : '上传照片'}}</button>
+        <button size="mini" class="mini ghost" wx:if="{{photoPath}}" bindtap="clearPhoto">清除</button>
+      </view>
+    </view>
 
-  <view class="help">
-    <text class="h">怎么用</text>
-    <text>1. 点「复制制作链接」</text>
-    <text>2. 打开手机 Safari / Chrome</text>
-    <text>3. 粘贴链接 → 改字改照片 → 导出 PNG/PDF</text>
+    <view class="row">
+      <text class="label">标题</text>
+      <input class="input" data-key="title" value="{{fields.title}}" bindinput="onField" />
+    </view>
+    <view class="row twin">
+      <view class="half">
+        <text class="label">姓名</text>
+        <input class="input" data-key="name" value="{{fields.name}}" bindinput="onField" />
+      </view>
+      <view class="half">
+        <text class="label">称呼</text>
+        <input class="input" data-key="suffix" value="{{fields.suffix}}" bindinput="onField" placeholder="同学" />
+      </view>
+    </view>
+    <view class="row">
+      <text class="label">荣誉称号</text>
+      <input class="input" data-key="honor" value="{{fields.honor}}" bindinput="onField" placeholder="可留空" />
+    </view>
+    <view class="row">
+      <text class="label">正文</text>
+      <textarea class="textarea" data-key="reason" value="{{fields.reason}}" bindinput="onField" auto-height maxlength="200" />
+    </view>
+    <view class="row">
+      <text class="label">结束语</text>
+      <textarea class="textarea" data-key="closing" value="{{fields.closing}}" bindinput="onField" auto-height maxlength="80" />
+    </view>
+    <view class="row twin">
+      <view class="half">
+        <text class="label">颁发单位</text>
+        <input class="input" data-key="issuer" value="{{fields.issuer}}" bindinput="onField" />
+      </view>
+      <view class="half">
+        <text class="label">日期</text>
+        <input class="input" data-key="date" value="{{fields.date}}" bindinput="onField" />
+      </view>
+    </view>
+  </view>
+
+  <view class="actions">
+    <button class="btn ghost" bindtap="saveProject">保存草稿</button>
+    <button class="btn primary" bindtap="exportImage">导出 / 分享</button>
   </view>
 </view>

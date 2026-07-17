@@ -1,8 +1,19 @@
-.page { padding: 40rpx 28rpx; background: #f5efe3; min-height: 100vh; box-sizing: border-box; }
-.tip {
-  font-size: 26rpx; color: #6b563a; line-height: 1.6;
-  background: #fff8e8; border: 1rpx solid #e8d3ad; border-radius: 16rpx;
-  padding: 20rpx 24rpx; margin-bottom: 28rpx;
+.page { min-height: 100vh; background: #f5efe3; padding: 24rpx; box-sizing: border-box; }
+.empty { padding: 120rpx 40rpx; text-align: center; }
+.empty .t { display: block; font-size: 34rpx; font-weight: 700; color: #3a2a12; }
+.empty .s { display: block; margin: 16rpx 0 40rpx; font-size: 26rpx; color: #9a7b3f; }
+.btn.primary { background: #8e1c22; color: #fff; border-radius: 16rpx; font-size: 30rpx; }
+.list { display: flex; flex-direction: column; gap: 16rpx; }
+.item {
+  display: flex; align-items: center; background: #fff; border-radius: 16rpx;
+  padding: 16rpx; box-shadow: 0 4rpx 16rpx rgba(0,0,0,.04);
 }
-.btn.primary { background: #8e1c22; color: #fff; border-radius: 16rpx; font-size: 30rpx; font-weight: 600; }
-.help { margin-top: 24rpx; font-size: 24rpx; color: #9a7b3f; line-height: 1.6; }
+.main { flex: 1; display: flex; align-items: center; min-width: 0; }
+.thumb { width: 96rpx; height: 128rpx; border-radius: 10rpx; background: #f4e9d8; flex-shrink: 0; }
+.meta { margin-left: 20rpx; min-width: 0; }
+.name {
+  display: block; font-size: 30rpx; font-weight: 600; color: #3a2a12;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.sub { display: block; margin-top: 8rpx; font-size: 22rpx; color: #9a7b3f; }
+.del { font-size: 24rpx; color: #c1272d; padding: 16rpx; flex-shrink: 0; }

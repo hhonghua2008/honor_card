@@ -7,9 +7,6 @@
   background: #fff; border-radius: 999rpx; padding: 18rpx 28rpx; font-size: 26rpx;
   box-shadow: 0 4rpx 16rpx rgba(0,0,0,.05);
 }
-.links { text-align: center; margin-top: 12rpx; font-size: 24rpx; color: #9a7b3f; }
-.link { color: #8e1c22; }
-.dot { margin: 0 8rpx; }
 .filters { white-space: nowrap; width: 100%; }
 .filters-sub { margin-top: 8rpx; }
 .filter-row { display: inline-flex; padding: 0 16rpx 8rpx; gap: 12rpx; }

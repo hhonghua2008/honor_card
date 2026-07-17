@@ -1,16 +1,26 @@
 const catalogData = require('../data/catalog.json');
 const { h5Base, apiBase } = require('./config');
 
-function withThumbUrl(list) {
-  const base = h5Base.replace(/\/$/, '');
-  return list.map(t => ({
-    ...t,
-    thumbUrl: base + '/' + t.thumb.replace(/^\//, '')
-  }));
+function assetUrl(rel) {
+  if (!rel) return '';
+  if (/^https?:\/\//.test(rel)) return rel;
+  return h5Base.replace(/\/$/, '') + '/' + rel.replace(/^\//, '');
+}
+
+function withUrls(t) {
+  return Object.assign({}, t, {
+    thumbUrl: assetUrl(t.thumb),
+    bgUrl: assetUrl(t.bg)
+  });
 }
 
 function loadBuiltin() {
-  return withThumbUrl(catalogData.templates || []);
+  return (catalogData.templates || []).map(withUrls);
+}
+
+function getById(id) {
+  const t = (catalogData.templates || []).find(x => x.id === id);
+  return t ? withUrls(t) : null;
 }
 
 function filterList(list, scene, orient, keyword) {
@@ -33,9 +43,7 @@ function filterList(list, scene, orient, keyword) {
 
 function countByScene(list) {
   const m = { all: list.length };
-  list.forEach(t => {
-    m[t.scene] = (m[t.scene] || 0) + 1;
-  });
+  list.forEach(t => { m[t.scene] = (m[t.scene] || 0) + 1; });
   return m;
 }
 
@@ -55,22 +63,7 @@ function fetchRemoteCatalog() {
       success: res => {
         if (!res.data || !res.data.ok || !res.data.catalog) return resolve(null);
         const disabled = new Set(res.data.catalog.disabled || []);
-        let list = loadBuiltin().filter(t => !disabled.has(t.id));
-        (res.data.catalog.custom || []).forEach(c => {
-          if (!disabled.has(c.id)) {
-            list.push({
-              id: c.id,
-              name: c.name,
-              category: c.category || '自定义',
-              scene: c.scene || 'campus',
-              sceneLabel: c.sceneLabel || '自定义',
-              landscape: !!c.landscape,
-              thumb: c.thumb || '',
-              thumbUrl: c.thumb ? h5Base.replace(/\/$/, '') + '/' + c.thumb : ''
-            });
-          }
-        });
-        resolve(list);
+        resolve(loadBuiltin().filter(t => !disabled.has(t.id)));
       },
       fail: () => resolve(null)
     });
@@ -79,8 +72,10 @@ function fetchRemoteCatalog() {
 
 module.exports = {
   loadBuiltin,
+  getById,
   filterList,
   countByScene,
   countByOrient,
-  fetchRemoteCatalog
+  fetchRemoteCatalog,
+  assetUrl
 };

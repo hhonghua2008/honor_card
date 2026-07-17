@@ -2,12 +2,10 @@
   "pages": [
     "pages/index/index",
     "pages/projects/projects",
-    "pages/editor/editor",
-    "pages/web/web",
-    "pages/pricing/pricing"
+    "pages/editor/editor"
   ],
   "window": {
-    "navigationBarTitleText": "HonorCard",
+    "navigationBarTitleText": "奖状模版大全",
     "navigationBarBackgroundColor": "#8e1c22",
     "navigationBarTextStyle": "white",
     "backgroundColor": "#f5efe3"
@@ -27,6 +25,11 @@
         "text": "我的"
       }
     ]
+  },
+  "permission": {
+    "scope.writePhotosAlbum": {
+      "desc": "用于将制作好的奖状保存到手机相册"
+    }
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json",
