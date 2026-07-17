@@ -1,2 +1,21 @@
-<web-view wx:if="{{url}}" src="{{url}}"></web-view>
-<view wx:else class="err">加载失败，请检查 h5Base 配置</view>
+<view class="page">
+  <view class="card">
+    <image wx:if="{{thumbUrl}}" class="thumb" src="{{thumbUrl}}" mode="aspectFill" />
+    <view class="meta">
+      <text class="name">{{name}}</text>
+      <text class="cat">{{category}}</text>
+    </view>
+  </view>
+
+  <view class="tip">{{tip}}</view>
+
+  <button class="btn primary" bindtap="copyLink">复制制作链接</button>
+  <button class="btn ghost" bindtap="openSite">复制模板站首页</button>
+
+  <view class="help">
+    <text class="h">怎么用</text>
+    <text>1. 点「复制制作链接」</text>
+    <text>2. 打开手机 Safari / Chrome</text>
+    <text>3. 粘贴链接 → 改字改照片 → 导出 PNG/PDF</text>
+  </view>
+</view>

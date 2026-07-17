@@ -8,7 +8,7 @@
     "minified": true,
     "postcss": true
   },
-  "appid": "REPLACE_WITH_YOUR_APPID",
+  "appid": "wx456268e19464e18a",
   "projectname": "honorcard",
   "compileType": "miniprogram",
   "libVersion": "3.7.12",

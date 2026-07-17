@@ -1,2 +1,4 @@
-<web-view wx:if="{{url}}" src="{{url}}"></web-view>
-<view wx:else class="err">加载失败，请检查 h5Base 与业务域名</view>
+<view class="page">
+  <view class="tip">个人小程序无法打开内嵌网页。请复制链接后用手机浏览器查看「{{title}}」。</view>
+  <button class="btn primary" bindtap="copyLink">复制链接</button>
+</view>

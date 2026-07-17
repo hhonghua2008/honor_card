@@ -1,1 +1,4 @@
-<web-view src="{{url}}"></web-view>
+<view class="page">
+  <view class="tip">个人小程序无法内嵌网页。定价与激活请在浏览器中完成。</view>
+  <button class="btn primary" bindtap="copyLink">复制定价页链接</button>
+</view>
