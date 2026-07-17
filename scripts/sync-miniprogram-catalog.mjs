@@ -94,6 +94,11 @@ function buildDefaults(layers) {
   };
 }
 
+function mpBgFromWeb(bg) {
+  // assets/templates/tpl-01-red-web.png → assets/templates/tpl-01-red-mp.jpg
+  return String(bg || '').replace(/-web\.png$/i, '-mp.jpg');
+}
+
 const catalog = w.HC_TEMPLATES.map(t => {
   const layers = (t.layers || []).map(pickLayer).filter(Boolean);
   const photo = layers.find(l => l.type === 'photo') || null;
@@ -105,7 +110,8 @@ const catalog = w.HC_TEMPLATES.map(t => {
     sceneLabel: SCENE_LABELS[t.sceneCategory] || '其他',
     landscape: t.canvas.w > t.canvas.h,
     thumb: t.thumb,
-    bg: t.bg,
+    bg: mpBgFromWeb(t.bg), // 小程序用压缩 JPEG
+    bgFull: t.bg,           // 保留原 web 路径备查
     canvas: { w: t.canvas.w, h: t.canvas.h },
     hasPhoto: !!photo,
     photo,

@@ -10,7 +10,8 @@
       "sceneLabel": "校园表扬",
       "landscape": false,
       "thumb": "assets/templates/thumbs/tpl-01-red.jpg",
-      "bg": "assets/templates/tpl-01-red-web.png",
+      "bg": "assets/templates/tpl-01-red-mp.jpg",
+      "bgFull": "assets/templates/tpl-01-red-web.png",
       "canvas": {
         "w": 1024,
         "h": 1536
@@ -191,7 +192,8 @@
       "sceneLabel": "照片奖状",
       "landscape": false,
       "thumb": "assets/templates/thumbs/tpl-02-pink.jpg",
-      "bg": "assets/templates/tpl-02-pink-web.png",
+      "bg": "assets/templates/tpl-02-pink-mp.jpg",
+      "bgFull": "assets/templates/tpl-02-pink-web.png",
       "canvas": {
         "w": 1024,
         "h": 1536
@@ -372,7 +374,8 @@
       "sceneLabel": "员工表彰",
       "landscape": false,
       "thumb": "assets/templates/thumbs/tpl-03-blue.jpg",
-      "bg": "assets/templates/tpl-03-blue-web.png",
+      "bg": "assets/templates/tpl-03-blue-mp.jpg",
+      "bgFull": "assets/templates/tpl-03-blue-web.png",
       "canvas": {
         "w": 1024,
         "h": 1536
@@ -547,7 +550,8 @@
       "sceneLabel": "活动荣誉",
       "landscape": false,
       "thumb": "assets/templates/thumbs/tpl-04-green.jpg",
-      "bg": "assets/templates/tpl-04-green-web.png",
+      "bg": "assets/templates/tpl-04-green-mp.jpg",
+      "bgFull": "assets/templates/tpl-04-green-web.png",
       "canvas": {
         "w": 1024,
         "h": 1536
@@ -728,7 +732,8 @@
       "sceneLabel": "员工表彰",
       "landscape": false,
       "thumb": "assets/templates/thumbs/tpl-05-purple.jpg",
-      "bg": "assets/templates/tpl-05-purple-web.png",
+      "bg": "assets/templates/tpl-05-purple-mp.jpg",
+      "bgFull": "assets/templates/tpl-05-purple-web.png",
       "canvas": {
         "w": 1024,
         "h": 1536
@@ -903,7 +908,8 @@
       "sceneLabel": "活动荣誉",
       "landscape": false,
       "thumb": "assets/templates/thumbs/tpl-06-orange.jpg",
-      "bg": "assets/templates/tpl-06-orange-web.png",
+      "bg": "assets/templates/tpl-06-orange-mp.jpg",
+      "bgFull": "assets/templates/tpl-06-orange-web.png",
       "canvas": {
         "w": 1024,
         "h": 1536
@@ -1084,7 +1090,8 @@
       "sceneLabel": "校园表扬",
       "landscape": false,
       "thumb": "assets/templates/thumbs/tpl-07-cosmic.jpg",
-      "bg": "assets/templates/tpl-07-cosmic-web.png",
+      "bg": "assets/templates/tpl-07-cosmic-mp.jpg",
+      "bgFull": "assets/templates/tpl-07-cosmic-web.png",
       "canvas": {
         "w": 1024,
         "h": 1536
@@ -1265,7 +1272,8 @@
       "sceneLabel": "节日励志",
       "landscape": false,
       "thumb": "assets/templates/thumbs/tpl-08-festival.jpg",
-      "bg": "assets/templates/tpl-08-festival-web.png",
+      "bg": "assets/templates/tpl-08-festival-mp.jpg",
+      "bgFull": "assets/templates/tpl-08-festival-web.png",
       "canvas": {
         "w": 1024,
         "h": 1536
@@ -1423,7 +1431,8 @@
       "sceneLabel": "校园表扬",
       "landscape": false,
       "thumb": "assets/templates/thumbs/tpl-09-forest.jpg",
-      "bg": "assets/templates/tpl-09-forest-web.png",
+      "bg": "assets/templates/tpl-09-forest-mp.jpg",
+      "bgFull": "assets/templates/tpl-09-forest-web.png",
       "canvas": {
         "w": 1024,
         "h": 1536
@@ -1604,7 +1613,8 @@
       "sceneLabel": "员工表彰",
       "landscape": false,
       "thumb": "assets/templates/thumbs/tpl-10-champagne.jpg",
-      "bg": "assets/templates/tpl-10-champagne-web.png",
+      "bg": "assets/templates/tpl-10-champagne-mp.jpg",
+      "bgFull": "assets/templates/tpl-10-champagne-web.png",
       "canvas": {
         "w": 1024,
         "h": 1536
@@ -1779,7 +1789,8 @@
       "sceneLabel": "照片奖状",
       "landscape": false,
       "thumb": "assets/templates/thumbs/tpl-11-cartoon.jpg",
-      "bg": "assets/templates/tpl-11-cartoon-web.png",
+      "bg": "assets/templates/tpl-11-cartoon-mp.jpg",
+      "bgFull": "assets/templates/tpl-11-cartoon-web.png",
       "canvas": {
         "w": 1024,
         "h": 1536
@@ -1960,7 +1971,8 @@
       "sceneLabel": "校园表扬",
       "landscape": false,
       "thumb": "assets/templates/thumbs/tpl-12-dream.jpg",
-      "bg": "assets/templates/tpl-12-dream-web.png",
+      "bg": "assets/templates/tpl-12-dream-mp.jpg",
+      "bgFull": "assets/templates/tpl-12-dream-web.png",
       "canvas": {
         "w": 1024,
         "h": 1536
@@ -2118,7 +2130,8 @@
       "sceneLabel": "员工表彰",
       "landscape": false,
       "thumb": "assets/templates/thumbs/tpl-19-diploma.jpg",
-      "bg": "assets/templates/tpl-19-diploma-web.png",
+      "bg": "assets/templates/tpl-19-diploma-mp.jpg",
+      "bgFull": "assets/templates/tpl-19-diploma-web.png",
       "canvas": {
         "w": 1024,
         "h": 1536
@@ -2276,7 +2289,8 @@
       "sceneLabel": "校园表扬",
       "landscape": false,
       "thumb": "assets/templates/thumbs/tpl-20-star.jpg",
-      "bg": "assets/templates/tpl-20-star-web.png",
+      "bg": "assets/templates/tpl-20-star-mp.jpg",
+      "bgFull": "assets/templates/tpl-20-star-web.png",
       "canvas": {
         "w": 1024,
         "h": 1536
@@ -2457,7 +2471,8 @@
       "sceneLabel": "活动荣誉",
       "landscape": false,
       "thumb": "assets/templates/thumbs/tpl-21-peony.jpg",
-      "bg": "assets/templates/tpl-21-peony-web.png",
+      "bg": "assets/templates/tpl-21-peony-mp.jpg",
+      "bgFull": "assets/templates/tpl-21-peony-web.png",
       "canvas": {
         "w": 1024,
         "h": 1536
@@ -2638,7 +2653,8 @@
       "sceneLabel": "员工表彰",
       "landscape": false,
       "thumb": "assets/templates/thumbs/tpl-22-noir.jpg",
-      "bg": "assets/templates/tpl-22-noir-web.png",
+      "bg": "assets/templates/tpl-22-noir-mp.jpg",
+      "bgFull": "assets/templates/tpl-22-noir-web.png",
       "canvas": {
         "w": 1024,
         "h": 1536
@@ -2819,7 +2835,8 @@
       "sceneLabel": "校园表扬",
       "landscape": true,
       "thumb": "assets/templates/thumbs/tpl-13-land-red.jpg",
-      "bg": "assets/templates/tpl-13-land-red-web.png",
+      "bg": "assets/templates/tpl-13-land-red-mp.jpg",
+      "bgFull": "assets/templates/tpl-13-land-red-web.png",
       "canvas": {
         "w": 1216,
         "h": 712
@@ -3000,7 +3017,8 @@
       "sceneLabel": "员工表彰",
       "landscape": true,
       "thumb": "assets/templates/thumbs/tpl-14-land-blue.jpg",
-      "bg": "assets/templates/tpl-14-land-blue-web.png",
+      "bg": "assets/templates/tpl-14-land-blue-mp.jpg",
+      "bgFull": "assets/templates/tpl-14-land-blue-web.png",
       "canvas": {
         "w": 1216,
         "h": 712
@@ -3175,7 +3193,8 @@
       "sceneLabel": "活动荣誉",
       "landscape": true,
       "thumb": "assets/templates/thumbs/tpl-15-land-green.jpg",
-      "bg": "assets/templates/tpl-15-land-green-web.png",
+      "bg": "assets/templates/tpl-15-land-green-mp.jpg",
+      "bgFull": "assets/templates/tpl-15-land-green-web.png",
       "canvas": {
         "w": 1216,
         "h": 712
@@ -3356,7 +3375,8 @@
       "sceneLabel": "员工表彰",
       "landscape": true,
       "thumb": "assets/templates/thumbs/tpl-16-land-purple.jpg",
-      "bg": "assets/templates/tpl-16-land-purple-web.png",
+      "bg": "assets/templates/tpl-16-land-purple-mp.jpg",
+      "bgFull": "assets/templates/tpl-16-land-purple-web.png",
       "canvas": {
         "w": 1216,
         "h": 712
@@ -3531,7 +3551,8 @@
       "sceneLabel": "活动荣誉",
       "landscape": true,
       "thumb": "assets/templates/thumbs/tpl-17-land-orange.jpg",
-      "bg": "assets/templates/tpl-17-land-orange-web.png",
+      "bg": "assets/templates/tpl-17-land-orange-mp.jpg",
+      "bgFull": "assets/templates/tpl-17-land-orange-web.png",
       "canvas": {
         "w": 1216,
         "h": 712
@@ -3712,7 +3733,8 @@
       "sceneLabel": "照片奖状",
       "landscape": true,
       "thumb": "assets/templates/thumbs/tpl-18-land-pink.jpg",
-      "bg": "assets/templates/tpl-18-land-pink-web.png",
+      "bg": "assets/templates/tpl-18-land-pink-mp.jpg",
+      "bgFull": "assets/templates/tpl-18-land-pink-web.png",
       "canvas": {
         "w": 1216,
         "h": 712
@@ -3893,7 +3915,8 @@
       "sceneLabel": "照片奖状",
       "landscape": true,
       "thumb": "assets/templates/thumbs/tpl-23-land-bear.jpg",
-      "bg": "assets/templates/tpl-23-land-bear-web.png",
+      "bg": "assets/templates/tpl-23-land-bear-mp.jpg",
+      "bgFull": "assets/templates/tpl-23-land-bear-web.png",
       "canvas": {
         "w": 1216,
         "h": 712
@@ -4074,7 +4097,8 @@
       "sceneLabel": "照片奖状",
       "landscape": true,
       "thumb": "assets/templates/thumbs/tpl-24-land-bunny.jpg",
-      "bg": "assets/templates/tpl-24-land-bunny-web.png",
+      "bg": "assets/templates/tpl-24-land-bunny-mp.jpg",
+      "bgFull": "assets/templates/tpl-24-land-bunny-web.png",
       "canvas": {
         "w": 1216,
         "h": 712
@@ -4255,7 +4279,8 @@
       "sceneLabel": "照片奖状",
       "landscape": true,
       "thumb": "assets/templates/thumbs/tpl-25-land-dino.jpg",
-      "bg": "assets/templates/tpl-25-land-dino-web.png",
+      "bg": "assets/templates/tpl-25-land-dino-mp.jpg",
+      "bgFull": "assets/templates/tpl-25-land-dino-web.png",
       "canvas": {
         "w": 1216,
         "h": 712
@@ -4436,7 +4461,8 @@
       "sceneLabel": "照片奖状",
       "landscape": true,
       "thumb": "assets/templates/thumbs/tpl-26-land-unicorn.jpg",
-      "bg": "assets/templates/tpl-26-land-unicorn-web.png",
+      "bg": "assets/templates/tpl-26-land-unicorn-mp.jpg",
+      "bgFull": "assets/templates/tpl-26-land-unicorn-web.png",
       "canvas": {
         "w": 1216,
         "h": 712
@@ -4594,7 +4620,8 @@
       "sceneLabel": "照片奖状",
       "landscape": true,
       "thumb": "assets/templates/thumbs/tpl-27-land-cat.jpg",
-      "bg": "assets/templates/tpl-27-land-cat-web.png",
+      "bg": "assets/templates/tpl-27-land-cat-mp.jpg",
+      "bgFull": "assets/templates/tpl-27-land-cat-web.png",
       "canvas": {
         "w": 1216,
         "h": 712
@@ -4775,7 +4802,8 @@
       "sceneLabel": "照片奖状",
       "landscape": true,
       "thumb": "assets/templates/thumbs/tpl-28-land-ocean.jpg",
-      "bg": "assets/templates/tpl-28-land-ocean-web.png",
+      "bg": "assets/templates/tpl-28-land-ocean-mp.jpg",
+      "bgFull": "assets/templates/tpl-28-land-ocean-web.png",
       "canvas": {
         "w": 1216,
         "h": 712
