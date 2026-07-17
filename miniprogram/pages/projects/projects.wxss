@@ -1,11 +1,5 @@
 .page { min-height: 100vh; background: #f5efe3; padding: 24rpx; box-sizing: border-box; }
-.cloud-bar {
-  background: #fff; border-radius: 16rpx; padding: 20rpx; margin-bottom: 20rpx;
-  box-shadow: 0 4rpx 16rpx rgba(0,0,0,.04);
-}
-.cloud-tip { display: block; font-size: 22rpx; color: #6b563a; line-height: 1.5; margin-bottom: 14rpx; }
-.cloud-btns { display: flex; flex-wrap: wrap; gap: 12rpx; }
-.cbtn { background: #8e1c22; color: #fff; }
+.tools { display: flex; gap: 12rpx; margin-bottom: 20rpx; }
 .cbtn.ghost { background: #fff; color: #8e1c22; border: 1rpx solid #e8d3ad; }
 .empty { padding: 80rpx 40rpx; text-align: center; }
 .empty .t { display: block; font-size: 34rpx; font-weight: 700; color: #3a2a12; }

@@ -1,12 +1,7 @@
 <view class="page">
-  <view class="cloud-bar">
-    <text class="cloud-tip">{{cloudTip}}</text>
-    <view class="cloud-btns">
-      <button size="mini" class="cbtn" wx:if="{{cloudOn}}" bindtap="syncUp">上传云端</button>
-      <button size="mini" class="cbtn" wx:if="{{cloudOn}}" bindtap="syncDown">拉取云端</button>
-      <button size="mini" class="cbtn ghost" bindtap="exportBackup">导出备份</button>
-      <button size="mini" class="cbtn ghost" bindtap="importBackup">导入备份</button>
-    </view>
+  <view class="tools">
+    <button size="mini" class="cbtn ghost" bindtap="exportBackup">导出备份</button>
+    <button size="mini" class="cbtn ghost" bindtap="importBackup">导入备份</button>
   </view>
 
   <view wx:if="{{empty}}" class="empty">

@@ -1,22 +1,10 @@
 const projects = require('../../utils/projects');
 const catalog = require('../../utils/catalog');
-const cloud = require('../../utils/cloud');
 
 Page({
-  data: {
-    list: [],
-    empty: true,
-    cloudOn: false,
-    cloudTip: ''
-  },
+  data: { list: [], empty: true },
 
   onShow() {
-    this.setData({
-      cloudOn: cloud.enabled(),
-      cloudTip: cloud.enabled()
-        ? '已配置云开发，可上传/拉取草稿（跨设备同步文案）'
-        : '未开通云同步：可用「导出/导入备份」。开通：云开发创建环境后填写 config.cloudEnv'
-    });
     this.reload();
   },
 
@@ -55,21 +43,6 @@ Page({
 
   goTemplates() {
     wx.switchTab({ url: '/pages/index/index' });
-  },
-
-  async syncUp() {
-    wx.showLoading({ title: '上传中' });
-    const r = await cloud.pushAll();
-    wx.hideLoading();
-    wx.showToast({ title: r.msg || (r.ok ? '完成' : '失败'), icon: 'none' });
-  },
-
-  async syncDown() {
-    wx.showLoading({ title: '拉取中' });
-    const r = await cloud.pullAll();
-    wx.hideLoading();
-    this.reload();
-    wx.showToast({ title: r.msg || (r.ok ? '完成' : '失败'), icon: 'none' });
   },
 
   exportBackup() {

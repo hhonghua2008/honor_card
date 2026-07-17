@@ -1,7 +1,6 @@
 const catalog = require('../../utils/catalog');
 const { renderCertificate } = require('../../utils/draw');
 const projects = require('../../utils/projects');
-const cloud = require('../../utils/cloud');
 
 Page({
   data: {
