@@ -17,6 +17,10 @@ const SCENE_LABELS = {
   festival: '节日励志'
 };
 
+function isSerif(fontFamily) {
+  return /Song|SimSun|serif|Kai|Kaiti/i.test(String(fontFamily || ''));
+}
+
 function pickLayer(l) {
   if (l.type === 'photo') {
     return {
@@ -57,7 +61,9 @@ function pickLayer(l) {
       textAlign: l.textAlign || 'center',
       originX: l.originX || 'center',
       originY: l.originY || 'center',
-      lineHeight: l.lineHeight || 1.5
+      lineHeight: l.lineHeight || 1.5,
+      charSpacing: l.charSpacing || 0,
+      serif: isSerif(l.fontFamily)
     };
   }
   return null;
@@ -76,13 +82,15 @@ function buildDefaults(layers) {
   const rec = parseRecipient(map.recipient);
   return {
     title: map.title || '奖状',
+    label: map.recipient_label || '',
     name: rec.name,
     suffix: rec.suffix,
     reason: map.reason || '',
     honor: map.honor || '',
     closing: map.closing || '',
     issuer: map.issuer || '荣誉颁发',
-    date: map.date || ''
+    date: map.date || '',
+    sealText: (layers.find(l => l.type === 'seal') || {}).text || '荣誉专用章'
   };
 }
 
@@ -108,5 +116,5 @@ const catalog = w.HC_TEMPLATES.map(t => {
 
 const out = path.join(root, 'miniprogram/data/catalog.json');
 fs.mkdirSync(path.dirname(out), { recursive: true });
-fs.writeFileSync(out, JSON.stringify({ version: 2, count: catalog.length, templates: catalog }, null, 2) + '\n');
-console.log('Wrote', catalog.length, 'templates (v2 editor) →', out);
+fs.writeFileSync(out, JSON.stringify({ version: 3, count: catalog.length, templates: catalog }, null, 2) + '\n');
+console.log('Wrote', catalog.length, 'templates (v3) →', out);

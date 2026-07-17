@@ -2,7 +2,8 @@
   "pages": [
     "pages/index/index",
     "pages/projects/projects",
-    "pages/editor/editor"
+    "pages/editor/editor",
+    "pages/batch/batch"
   ],
   "window": {
     "navigationBarTitleText": "奖状模版大全",

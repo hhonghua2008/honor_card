@@ -30,10 +30,11 @@
 .mini { background: #8e1c22; color: #fff; }
 .mini.ghost { background: #fff; color: #8e1c22; border: 1rpx solid #e8d3ad; }
 .actions {
-  position: sticky; bottom: 0; display: flex; gap: 16rpx; margin-top: 24rpx;
+  position: sticky; bottom: 0; display: flex; gap: 12rpx; margin-top: 24rpx;
   padding: 16rpx 0 calc(16rpx + env(safe-area-inset-bottom));
   background: linear-gradient(180deg, rgba(245,239,227,0), #f5efe3 30%);
 }
+.actions-3 .btn { font-size: 28rpx; }
 .btn {
   flex: 1; border-radius: 16rpx; font-size: 30rpx; font-weight: 600; padding: 8rpx 0;
 }

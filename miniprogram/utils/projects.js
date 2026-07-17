@@ -16,7 +16,9 @@ function saveAll(arr) {
 function upsert(proj) {
   const arr = list();
   const i = arr.findIndex(p => p.id === proj.id);
-  const next = Object.assign({}, proj, { updatedAt: Date.now() });
+  const next = Object.assign({}, proj, {
+    updatedAt: proj.updatedAt || Date.now()
+  });
   if (i >= 0) arr[i] = next;
   else arr.unshift(next);
   saveAll(arr.slice(0, 40));

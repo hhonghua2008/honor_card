@@ -1,5 +1,5 @@
 {
-  "version": 2,
+  "version": 3,
   "count": 28,
   "templates": [
     {
@@ -30,13 +30,15 @@
       },
       "defaults": {
         "title": "荣誉证书",
+        "label": "",
         "name": "张小明",
         "suffix": "先生/女士",
         "reason": "在2026年度表现优异、贡献突出，",
         "honor": "年度杰出贡献",
         "closing": "特发此证，以资鼓励。",
         "issuer": "HonorCard 荣誉颁发",
-        "date": "2026年7月17日"
+        "date": "2026年7月17日",
+        "sealText": "荣誉颁发"
       },
       "layers": [
         {
@@ -52,7 +54,9 @@
           "textAlign": "center",
           "originX": "center",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 1200,
+          "serif": true
         },
         {
           "type": "photo",
@@ -79,7 +83,9 @@
           "textAlign": "left",
           "originX": "left",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -94,7 +100,9 @@
           "textAlign": "left",
           "originX": "left",
           "originY": "center",
-          "lineHeight": 1.55
+          "lineHeight": 1.55,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -109,7 +117,9 @@
           "textAlign": "center",
           "originX": "center",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -124,7 +134,9 @@
           "textAlign": "left",
           "originX": "left",
           "originY": "center",
-          "lineHeight": 1.6
+          "lineHeight": 1.6,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -139,7 +151,9 @@
           "textAlign": "right",
           "originX": "right",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -154,7 +168,9 @@
           "textAlign": "right",
           "originX": "right",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "seal",
@@ -195,13 +211,15 @@
       },
       "defaults": {
         "title": "奖状",
+        "label": "",
         "name": "张小明",
         "suffix": "小朋友",
         "reason": "在亲子活动中表现出色、活泼可爱，",
         "honor": "进步小明星",
         "closing": "特发此表扬状！继续加油哦～",
         "issuer": "HonorCard 荣誉颁发",
-        "date": "2026年7月17日"
+        "date": "2026年7月17日",
+        "sealText": "荣誉颁发"
       },
       "layers": [
         {
@@ -217,7 +235,9 @@
           "textAlign": "center",
           "originX": "center",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 1200,
+          "serif": true
         },
         {
           "type": "photo",
@@ -244,7 +264,9 @@
           "textAlign": "left",
           "originX": "left",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -259,7 +281,9 @@
           "textAlign": "left",
           "originX": "left",
           "originY": "center",
-          "lineHeight": 1.55
+          "lineHeight": 1.55,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -274,7 +298,9 @@
           "textAlign": "center",
           "originX": "center",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -289,7 +315,9 @@
           "textAlign": "left",
           "originX": "left",
           "originY": "center",
-          "lineHeight": 1.6
+          "lineHeight": 1.6,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -304,7 +332,9 @@
           "textAlign": "right",
           "originX": "right",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -319,7 +349,9 @@
           "textAlign": "right",
           "originX": "right",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "seal",
@@ -349,13 +381,15 @@
       "photo": null,
       "defaults": {
         "title": "荣誉证书",
+        "label": "兹证明",
         "name": "张小明",
         "suffix": "先生/女士",
         "reason": "在工作中展现专业素养与卓越能力，",
         "honor": "年度优秀员工",
         "closing": "特颁此证，以资表彰。",
         "issuer": "HonorCard 荣誉颁发",
-        "date": "2026年7月17日"
+        "date": "2026年7月17日",
+        "sealText": "荣誉颁发"
       },
       "layers": [
         {
@@ -371,7 +405,9 @@
           "textAlign": "center",
           "originX": "center",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 1200,
+          "serif": true
         },
         {
           "type": "text",
@@ -386,7 +422,9 @@
           "textAlign": "center",
           "originX": "center",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -401,7 +439,9 @@
           "textAlign": "center",
           "originX": "center",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -416,7 +456,9 @@
           "textAlign": "center",
           "originX": "center",
           "originY": "center",
-          "lineHeight": 1.65
+          "lineHeight": 1.65,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -431,7 +473,9 @@
           "textAlign": "center",
           "originX": "center",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -446,7 +490,9 @@
           "textAlign": "center",
           "originX": "center",
           "originY": "center",
-          "lineHeight": 1.6
+          "lineHeight": 1.6,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -461,7 +507,9 @@
           "textAlign": "right",
           "originX": "right",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -476,7 +524,9 @@
           "textAlign": "right",
           "originX": "right",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "seal",
@@ -517,13 +567,15 @@
       },
       "defaults": {
         "title": "奖状",
+        "label": "",
         "name": "张小明",
         "suffix": "同志",
         "reason": "在体育竞技中顽强拼搏、超越自我，",
         "honor": "运动健将",
         "closing": "特发此证，以资鼓励！",
         "issuer": "HonorCard 荣誉颁发",
-        "date": "2026年7月17日"
+        "date": "2026年7月17日",
+        "sealText": "荣誉颁发"
       },
       "layers": [
         {
@@ -539,7 +591,9 @@
           "textAlign": "center",
           "originX": "center",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 1200,
+          "serif": true
         },
         {
           "type": "photo",
@@ -566,7 +620,9 @@
           "textAlign": "left",
           "originX": "left",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -581,7 +637,9 @@
           "textAlign": "left",
           "originX": "left",
           "originY": "center",
-          "lineHeight": 1.55
+          "lineHeight": 1.55,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -596,7 +654,9 @@
           "textAlign": "center",
           "originX": "center",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -611,7 +671,9 @@
           "textAlign": "left",
           "originX": "left",
           "originY": "center",
-          "lineHeight": 1.6
+          "lineHeight": 1.6,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -626,7 +688,9 @@
           "textAlign": "right",
           "originX": "right",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -641,7 +705,9 @@
           "textAlign": "right",
           "originX": "right",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "seal",
@@ -671,13 +737,15 @@
       "photo": null,
       "defaults": {
         "title": "荣誉证书",
+        "label": "兹证明",
         "name": "张小明",
         "suffix": "先生/女士",
         "reason": "在艺术创作中才华横溢、作品精彩绝伦，",
         "honor": "年度优秀员工",
         "closing": "特颁此证，以资表彰。",
         "issuer": "HonorCard 荣誉颁发",
-        "date": "2026年7月17日"
+        "date": "2026年7月17日",
+        "sealText": "荣誉颁发"
       },
       "layers": [
         {
@@ -693,7 +761,9 @@
           "textAlign": "center",
           "originX": "center",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 1200,
+          "serif": true
         },
         {
           "type": "text",
@@ -708,7 +778,9 @@
           "textAlign": "center",
           "originX": "center",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -723,7 +795,9 @@
           "textAlign": "center",
           "originX": "center",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -738,7 +812,9 @@
           "textAlign": "center",
           "originX": "center",
           "originY": "center",
-          "lineHeight": 1.65
+          "lineHeight": 1.65,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -753,7 +829,9 @@
           "textAlign": "center",
           "originX": "center",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -768,7 +846,9 @@
           "textAlign": "center",
           "originX": "center",
           "originY": "center",
-          "lineHeight": 1.6
+          "lineHeight": 1.6,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -783,7 +863,9 @@
           "textAlign": "right",
           "originX": "right",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -798,7 +880,9 @@
           "textAlign": "right",
           "originX": "right",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "seal",
@@ -839,13 +923,15 @@
       },
       "defaults": {
         "title": "志愿者证书",
+        "label": "",
         "name": "张小明",
         "suffix": "同志",
         "reason": "在公益服务中无私奉献、传递温暖，",
         "honor": "最美志愿者",
         "closing": "特发此证，致以诚挚感谢！",
         "issuer": "HonorCard 荣誉颁发",
-        "date": "2026年7月17日"
+        "date": "2026年7月17日",
+        "sealText": "荣誉颁发"
       },
       "layers": [
         {
@@ -861,7 +947,9 @@
           "textAlign": "center",
           "originX": "center",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 1200,
+          "serif": true
         },
         {
           "type": "photo",
@@ -888,7 +976,9 @@
           "textAlign": "left",
           "originX": "left",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -903,7 +993,9 @@
           "textAlign": "left",
           "originX": "left",
           "originY": "center",
-          "lineHeight": 1.55
+          "lineHeight": 1.55,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -918,7 +1010,9 @@
           "textAlign": "center",
           "originX": "center",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -933,7 +1027,9 @@
           "textAlign": "left",
           "originX": "left",
           "originY": "center",
-          "lineHeight": 1.6
+          "lineHeight": 1.6,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -948,7 +1044,9 @@
           "textAlign": "right",
           "originX": "right",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -963,7 +1061,9 @@
           "textAlign": "right",
           "originX": "right",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "seal",
@@ -1004,13 +1104,15 @@
       },
       "defaults": {
         "title": "奖状",
+        "label": "",
         "name": "张小明",
         "suffix": "同学",
         "reason": "在科技节中探索求真、表现突出，",
         "honor": "科技小达人",
         "closing": "特发此证，以资鼓励。",
         "issuer": "HonorCard 荣誉颁发",
-        "date": "2026年7月17日"
+        "date": "2026年7月17日",
+        "sealText": "荣誉颁发"
       },
       "layers": [
         {
@@ -1026,7 +1128,9 @@
           "textAlign": "center",
           "originX": "center",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 1200,
+          "serif": true
         },
         {
           "type": "photo",
@@ -1053,7 +1157,9 @@
           "textAlign": "left",
           "originX": "left",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -1068,7 +1174,9 @@
           "textAlign": "left",
           "originX": "left",
           "originY": "center",
-          "lineHeight": 1.55
+          "lineHeight": 1.55,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -1083,7 +1191,9 @@
           "textAlign": "center",
           "originX": "center",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -1098,7 +1208,9 @@
           "textAlign": "left",
           "originX": "left",
           "originY": "center",
-          "lineHeight": 1.6
+          "lineHeight": 1.6,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -1113,7 +1225,9 @@
           "textAlign": "right",
           "originX": "right",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -1128,7 +1242,9 @@
           "textAlign": "right",
           "originX": "right",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "seal",
@@ -1158,13 +1274,15 @@
       "photo": null,
       "defaults": {
         "title": "荣誉证书",
+        "label": "",
         "name": "张小明",
         "suffix": "同志",
         "reason": "在春节联欢中登台献艺、广受好评，",
         "honor": "优秀表演者",
         "closing": "特颁此证，以资表彰。",
         "issuer": "HonorCard 荣誉颁发",
-        "date": "2026年7月17日"
+        "date": "2026年7月17日",
+        "sealText": "荣誉颁发"
       },
       "layers": [
         {
@@ -1180,7 +1298,9 @@
           "textAlign": "center",
           "originX": "center",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 1200,
+          "serif": true
         },
         {
           "type": "text",
@@ -1195,7 +1315,9 @@
           "textAlign": "left",
           "originX": "left",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -1210,7 +1332,9 @@
           "textAlign": "left",
           "originX": "left",
           "originY": "center",
-          "lineHeight": 1.6
+          "lineHeight": 1.6,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -1225,7 +1349,9 @@
           "textAlign": "center",
           "originX": "center",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -1240,7 +1366,9 @@
           "textAlign": "left",
           "originX": "left",
           "originY": "center",
-          "lineHeight": 1.6
+          "lineHeight": 1.6,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -1255,7 +1383,9 @@
           "textAlign": "right",
           "originX": "right",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -1270,7 +1400,9 @@
           "textAlign": "right",
           "originX": "right",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "seal",
@@ -1311,13 +1443,15 @@
       },
       "defaults": {
         "title": "奖状",
+        "label": "",
         "name": "张小明",
         "suffix": "同学",
         "reason": "在自然探索营中观察细致、热爱生命，",
         "honor": "探索小能手",
         "closing": "特发此证，以资鼓励。",
         "issuer": "HonorCard 荣誉颁发",
-        "date": "2026年7月17日"
+        "date": "2026年7月17日",
+        "sealText": "荣誉颁发"
       },
       "layers": [
         {
@@ -1333,7 +1467,9 @@
           "textAlign": "center",
           "originX": "center",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 1200,
+          "serif": true
         },
         {
           "type": "photo",
@@ -1360,7 +1496,9 @@
           "textAlign": "left",
           "originX": "left",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -1375,7 +1513,9 @@
           "textAlign": "left",
           "originX": "left",
           "originY": "center",
-          "lineHeight": 1.55
+          "lineHeight": 1.55,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -1390,7 +1530,9 @@
           "textAlign": "center",
           "originX": "center",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -1405,7 +1547,9 @@
           "textAlign": "left",
           "originX": "left",
           "originY": "center",
-          "lineHeight": 1.6
+          "lineHeight": 1.6,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -1420,7 +1564,9 @@
           "textAlign": "right",
           "originX": "right",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -1435,7 +1581,9 @@
           "textAlign": "right",
           "originX": "right",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "seal",
@@ -1465,13 +1613,15 @@
       "photo": null,
       "defaults": {
         "title": "荣誉证书",
+        "label": "兹证明",
         "name": "张小明",
         "suffix": "先生/女士",
         "reason": "在年度盛典中卓越贡献、风范出众，",
         "honor": "年度优秀员工",
         "closing": "特颁此证，以资表彰。",
         "issuer": "HonorCard 荣誉颁发",
-        "date": "2026年7月17日"
+        "date": "2026年7月17日",
+        "sealText": "荣誉颁发"
       },
       "layers": [
         {
@@ -1487,7 +1637,9 @@
           "textAlign": "center",
           "originX": "center",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 1200,
+          "serif": true
         },
         {
           "type": "text",
@@ -1502,7 +1654,9 @@
           "textAlign": "center",
           "originX": "center",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -1517,7 +1671,9 @@
           "textAlign": "center",
           "originX": "center",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -1532,7 +1688,9 @@
           "textAlign": "center",
           "originX": "center",
           "originY": "center",
-          "lineHeight": 1.65
+          "lineHeight": 1.65,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -1547,7 +1705,9 @@
           "textAlign": "center",
           "originX": "center",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -1562,7 +1722,9 @@
           "textAlign": "center",
           "originX": "center",
           "originY": "center",
-          "lineHeight": 1.6
+          "lineHeight": 1.6,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -1577,7 +1739,9 @@
           "textAlign": "right",
           "originX": "right",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -1592,7 +1756,9 @@
           "textAlign": "right",
           "originX": "right",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "seal",
@@ -1633,13 +1799,15 @@
       },
       "defaults": {
         "title": "奖状",
+        "label": "",
         "name": "张小明",
         "suffix": "小朋友",
         "reason": "在趣味挑战中勇敢闯关、笑到最后，",
         "honor": "闯关小勇士",
         "closing": "特发此表扬状！",
         "issuer": "HonorCard 荣誉颁发",
-        "date": "2026年7月17日"
+        "date": "2026年7月17日",
+        "sealText": "荣誉颁发"
       },
       "layers": [
         {
@@ -1655,7 +1823,9 @@
           "textAlign": "center",
           "originX": "center",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 1200,
+          "serif": true
         },
         {
           "type": "photo",
@@ -1682,7 +1852,9 @@
           "textAlign": "left",
           "originX": "left",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -1697,7 +1869,9 @@
           "textAlign": "left",
           "originX": "left",
           "originY": "center",
-          "lineHeight": 1.55
+          "lineHeight": 1.55,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -1712,7 +1886,9 @@
           "textAlign": "center",
           "originX": "center",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -1727,7 +1903,9 @@
           "textAlign": "left",
           "originX": "left",
           "originY": "center",
-          "lineHeight": 1.6
+          "lineHeight": 1.6,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -1742,7 +1920,9 @@
           "textAlign": "right",
           "originX": "right",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -1757,7 +1937,9 @@
           "textAlign": "right",
           "originX": "right",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "seal",
@@ -1787,13 +1969,15 @@
       "photo": null,
       "defaults": {
         "title": "荣誉证书",
+        "label": "",
         "name": "张小明",
         "suffix": "同学",
         "reason": "在才艺展演中温柔闪耀、惊艳四座，",
         "honor": "才艺之星",
         "closing": "特发此证，以资鼓励。",
         "issuer": "HonorCard 荣誉颁发",
-        "date": "2026年7月17日"
+        "date": "2026年7月17日",
+        "sealText": "荣誉颁发"
       },
       "layers": [
         {
@@ -1809,7 +1993,9 @@
           "textAlign": "center",
           "originX": "center",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 1200,
+          "serif": true
         },
         {
           "type": "text",
@@ -1824,7 +2010,9 @@
           "textAlign": "center",
           "originX": "center",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -1839,7 +2027,9 @@
           "textAlign": "center",
           "originX": "center",
           "originY": "center",
-          "lineHeight": 1.65
+          "lineHeight": 1.65,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -1854,7 +2044,9 @@
           "textAlign": "center",
           "originX": "center",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -1869,7 +2061,9 @@
           "textAlign": "center",
           "originX": "center",
           "originY": "center",
-          "lineHeight": 1.6
+          "lineHeight": 1.6,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -1884,7 +2078,9 @@
           "textAlign": "right",
           "originX": "right",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -1899,7 +2095,9 @@
           "textAlign": "right",
           "originX": "right",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "seal",
@@ -1929,13 +2127,15 @@
       "photo": null,
       "defaults": {
         "title": "荣誉证书",
+        "label": "",
         "name": "张小明",
         "suffix": "先生/女士",
         "reason": "经严格考核与综合评定，成绩优异，符合授予条件，",
         "honor": "优秀学员",
         "closing": "特发此证，以资表彰。",
         "issuer": "评审委员会",
-        "date": "2026年7月17日"
+        "date": "2026年7月17日",
+        "sealText": "评审委员会"
       },
       "layers": [
         {
@@ -1951,7 +2151,9 @@
           "textAlign": "center",
           "originX": "center",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 1200,
+          "serif": true
         },
         {
           "type": "text",
@@ -1966,7 +2168,9 @@
           "textAlign": "center",
           "originX": "center",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -1981,7 +2185,9 @@
           "textAlign": "center",
           "originX": "center",
           "originY": "center",
-          "lineHeight": 1.65
+          "lineHeight": 1.65,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -1996,7 +2202,9 @@
           "textAlign": "center",
           "originX": "center",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -2011,7 +2219,9 @@
           "textAlign": "center",
           "originX": "center",
           "originY": "center",
-          "lineHeight": 1.6
+          "lineHeight": 1.6,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -2026,7 +2236,9 @@
           "textAlign": "right",
           "originX": "right",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -2041,7 +2253,9 @@
           "textAlign": "right",
           "originX": "right",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "seal",
@@ -2082,13 +2296,15 @@
       },
       "defaults": {
         "title": "奖状",
+        "label": "",
         "name": "张小明",
         "suffix": "同学",
         "reason": "在本年度各项活动中积极进取、全面发展，荣获",
         "honor": "金色之星",
         "closing": "特发此证，以资鼓励！",
         "issuer": "幼儿园教务处",
-        "date": "2026年7月17日"
+        "date": "2026年7月17日",
+        "sealText": "幼儿园教务处"
       },
       "layers": [
         {
@@ -2104,7 +2320,9 @@
           "textAlign": "center",
           "originX": "center",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 1200,
+          "serif": true
         },
         {
           "type": "photo",
@@ -2131,7 +2349,9 @@
           "textAlign": "left",
           "originX": "left",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -2146,7 +2366,9 @@
           "textAlign": "left",
           "originX": "left",
           "originY": "center",
-          "lineHeight": 1.55
+          "lineHeight": 1.55,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -2161,7 +2383,9 @@
           "textAlign": "center",
           "originX": "center",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -2176,7 +2400,9 @@
           "textAlign": "left",
           "originX": "left",
           "originY": "center",
-          "lineHeight": 1.6
+          "lineHeight": 1.6,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -2191,7 +2417,9 @@
           "textAlign": "right",
           "originX": "right",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -2206,7 +2434,9 @@
           "textAlign": "right",
           "originX": "right",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "seal",
@@ -2247,13 +2477,15 @@
       },
       "defaults": {
         "title": "荣誉证书",
+        "label": "",
         "name": "张小明",
         "suffix": "老师",
         "reason": "春风化雨、润物无声，",
         "honor": "优秀教师",
         "closing": "感谢您的辛勤付出与无私奉献。",
         "issuer": "家长委员会",
-        "date": "2026年7月17日"
+        "date": "2026年7月17日",
+        "sealText": "家长委员会"
       },
       "layers": [
         {
@@ -2269,7 +2501,9 @@
           "textAlign": "center",
           "originX": "center",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 1200,
+          "serif": true
         },
         {
           "type": "photo",
@@ -2296,7 +2530,9 @@
           "textAlign": "left",
           "originX": "left",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -2311,7 +2547,9 @@
           "textAlign": "left",
           "originX": "left",
           "originY": "center",
-          "lineHeight": 1.55
+          "lineHeight": 1.55,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -2326,7 +2564,9 @@
           "textAlign": "center",
           "originX": "center",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -2341,7 +2581,9 @@
           "textAlign": "left",
           "originX": "left",
           "originY": "center",
-          "lineHeight": 1.6
+          "lineHeight": 1.6,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -2356,7 +2598,9 @@
           "textAlign": "right",
           "originX": "right",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -2371,7 +2615,9 @@
           "textAlign": "right",
           "originX": "right",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "seal",
@@ -2412,13 +2658,15 @@
       },
       "defaults": {
         "title": "荣誉证书",
+        "label": "",
         "name": "张小明",
         "suffix": "先生/女士",
         "reason": "在激烈竞争中脱颖而出、展现非凡实力，",
         "honor": "精英奖",
         "closing": "特颁此证，以资嘉奖。",
         "issuer": "董事会办公室",
-        "date": "2026年7月17日"
+        "date": "2026年7月17日",
+        "sealText": "董事会办公室"
       },
       "layers": [
         {
@@ -2434,7 +2682,9 @@
           "textAlign": "center",
           "originX": "center",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 1200,
+          "serif": true
         },
         {
           "type": "photo",
@@ -2461,7 +2711,9 @@
           "textAlign": "left",
           "originX": "left",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -2476,7 +2728,9 @@
           "textAlign": "left",
           "originX": "left",
           "originY": "center",
-          "lineHeight": 1.55
+          "lineHeight": 1.55,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -2491,7 +2745,9 @@
           "textAlign": "center",
           "originX": "center",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -2506,7 +2762,9 @@
           "textAlign": "left",
           "originX": "left",
           "originY": "center",
-          "lineHeight": 1.6
+          "lineHeight": 1.6,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -2521,7 +2779,9 @@
           "textAlign": "right",
           "originX": "right",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -2536,7 +2796,9 @@
           "textAlign": "right",
           "originX": "right",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "seal",
@@ -2577,13 +2839,15 @@
       },
       "defaults": {
         "title": "荣誉证书",
+        "label": "",
         "name": "张小明",
         "suffix": "先生/女士",
         "reason": "在2026年度表现优异、贡献突出，",
         "honor": "年度杰出贡献",
         "closing": "特发此证，以资鼓励。",
         "issuer": "HonorCard 荣誉颁发",
-        "date": "2026年7月17日"
+        "date": "2026年7月17日",
+        "sealText": "荣誉颁发"
       },
       "layers": [
         {
@@ -2599,7 +2863,9 @@
           "textAlign": "center",
           "originX": "center",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 900,
+          "serif": true
         },
         {
           "type": "photo",
@@ -2626,7 +2892,9 @@
           "textAlign": "left",
           "originX": "left",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -2641,7 +2909,9 @@
           "textAlign": "left",
           "originX": "left",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -2656,7 +2926,9 @@
           "textAlign": "center",
           "originX": "center",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -2671,7 +2943,9 @@
           "textAlign": "left",
           "originX": "left",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -2686,7 +2960,9 @@
           "textAlign": "right",
           "originX": "right",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -2701,7 +2977,9 @@
           "textAlign": "right",
           "originX": "right",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "seal",
@@ -2731,13 +3009,15 @@
       "photo": null,
       "defaults": {
         "title": "荣誉证书",
+        "label": "兹证明",
         "name": "张小明",
         "suffix": "先生/女士",
         "reason": "在工作中展现专业素养与卓越能力，",
         "honor": "年度优秀员工",
         "closing": "特颁此证，以资表彰。",
         "issuer": "HonorCard 荣誉颁发",
-        "date": "2026年7月17日"
+        "date": "2026年7月17日",
+        "sealText": "荣誉颁发"
       },
       "layers": [
         {
@@ -2753,7 +3033,9 @@
           "textAlign": "center",
           "originX": "center",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 900,
+          "serif": true
         },
         {
           "type": "text",
@@ -2768,7 +3050,9 @@
           "textAlign": "center",
           "originX": "center",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -2783,7 +3067,9 @@
           "textAlign": "center",
           "originX": "center",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -2798,7 +3084,9 @@
           "textAlign": "center",
           "originX": "center",
           "originY": "center",
-          "lineHeight": 1.55
+          "lineHeight": 1.55,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -2813,7 +3101,9 @@
           "textAlign": "center",
           "originX": "center",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -2828,7 +3118,9 @@
           "textAlign": "center",
           "originX": "center",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -2843,7 +3135,9 @@
           "textAlign": "right",
           "originX": "right",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -2858,7 +3152,9 @@
           "textAlign": "right",
           "originX": "right",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "seal",
@@ -2899,13 +3195,15 @@
       },
       "defaults": {
         "title": "奖状",
+        "label": "",
         "name": "张小明",
         "suffix": "同志",
         "reason": "在体育竞技中顽强拼搏、超越自我，",
         "honor": "运动健将",
         "closing": "特发此证，以资鼓励！",
         "issuer": "HonorCard 荣誉颁发",
-        "date": "2026年7月17日"
+        "date": "2026年7月17日",
+        "sealText": "荣誉颁发"
       },
       "layers": [
         {
@@ -2921,7 +3219,9 @@
           "textAlign": "center",
           "originX": "center",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 900,
+          "serif": true
         },
         {
           "type": "photo",
@@ -2948,7 +3248,9 @@
           "textAlign": "left",
           "originX": "left",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -2963,7 +3265,9 @@
           "textAlign": "left",
           "originX": "left",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -2978,7 +3282,9 @@
           "textAlign": "center",
           "originX": "center",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -2993,7 +3299,9 @@
           "textAlign": "left",
           "originX": "left",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -3008,7 +3316,9 @@
           "textAlign": "right",
           "originX": "right",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -3023,7 +3333,9 @@
           "textAlign": "right",
           "originX": "right",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "seal",
@@ -3053,13 +3365,15 @@
       "photo": null,
       "defaults": {
         "title": "荣誉证书",
+        "label": "兹证明",
         "name": "张小明",
         "suffix": "先生/女士",
         "reason": "在艺术创作中才华横溢、作品精彩绝伦，",
         "honor": "年度优秀员工",
         "closing": "特颁此证，以资表彰。",
         "issuer": "HonorCard 荣誉颁发",
-        "date": "2026年7月17日"
+        "date": "2026年7月17日",
+        "sealText": "荣誉颁发"
       },
       "layers": [
         {
@@ -3075,7 +3389,9 @@
           "textAlign": "center",
           "originX": "center",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 900,
+          "serif": true
         },
         {
           "type": "text",
@@ -3090,7 +3406,9 @@
           "textAlign": "center",
           "originX": "center",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -3105,7 +3423,9 @@
           "textAlign": "center",
           "originX": "center",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -3120,7 +3440,9 @@
           "textAlign": "center",
           "originX": "center",
           "originY": "center",
-          "lineHeight": 1.55
+          "lineHeight": 1.55,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -3135,7 +3457,9 @@
           "textAlign": "center",
           "originX": "center",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -3150,7 +3474,9 @@
           "textAlign": "center",
           "originX": "center",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -3165,7 +3491,9 @@
           "textAlign": "right",
           "originX": "right",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -3180,7 +3508,9 @@
           "textAlign": "right",
           "originX": "right",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "seal",
@@ -3221,13 +3551,15 @@
       },
       "defaults": {
         "title": "志愿者证书",
+        "label": "",
         "name": "张小明",
         "suffix": "同志",
         "reason": "在公益服务中无私奉献、传递温暖，",
         "honor": "最美志愿者",
         "closing": "特发此证，致以诚挚感谢！",
         "issuer": "HonorCard 荣誉颁发",
-        "date": "2026年7月17日"
+        "date": "2026年7月17日",
+        "sealText": "荣誉颁发"
       },
       "layers": [
         {
@@ -3243,7 +3575,9 @@
           "textAlign": "center",
           "originX": "center",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 900,
+          "serif": true
         },
         {
           "type": "photo",
@@ -3270,7 +3604,9 @@
           "textAlign": "left",
           "originX": "left",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -3285,7 +3621,9 @@
           "textAlign": "left",
           "originX": "left",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -3300,7 +3638,9 @@
           "textAlign": "center",
           "originX": "center",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -3315,7 +3655,9 @@
           "textAlign": "left",
           "originX": "left",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -3330,7 +3672,9 @@
           "textAlign": "right",
           "originX": "right",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -3345,7 +3689,9 @@
           "textAlign": "right",
           "originX": "right",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "seal",
@@ -3386,13 +3732,15 @@
       },
       "defaults": {
         "title": "奖状",
+        "label": "",
         "name": "张小明",
         "suffix": "小朋友",
         "reason": "在欢乐活动中表现出色、笑容满满，",
         "honor": "进步小明星",
         "closing": "特发此表扬状！",
         "issuer": "HonorCard 荣誉颁发",
-        "date": "2026年7月17日"
+        "date": "2026年7月17日",
+        "sealText": "荣誉颁发"
       },
       "layers": [
         {
@@ -3408,7 +3756,9 @@
           "textAlign": "center",
           "originX": "center",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 900,
+          "serif": true
         },
         {
           "type": "photo",
@@ -3435,7 +3785,9 @@
           "textAlign": "left",
           "originX": "left",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -3450,7 +3802,9 @@
           "textAlign": "left",
           "originX": "left",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -3465,7 +3819,9 @@
           "textAlign": "center",
           "originX": "center",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -3480,7 +3836,9 @@
           "textAlign": "left",
           "originX": "left",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -3495,7 +3853,9 @@
           "textAlign": "right",
           "originX": "right",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -3510,7 +3870,9 @@
           "textAlign": "right",
           "originX": "right",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "seal",
@@ -3551,13 +3913,15 @@
       },
       "defaults": {
         "title": "奖状",
+        "label": "",
         "name": "张小明",
         "suffix": "小朋友",
         "reason": "在成长路上勇敢前行、闪闪发光，",
         "honor": "闪亮小明星",
         "closing": "特发此表扬状！",
         "issuer": "幼儿园园长室",
-        "date": "2026年7月17日"
+        "date": "2026年7月17日",
+        "sealText": "幼儿园园长室"
       },
       "layers": [
         {
@@ -3573,7 +3937,9 @@
           "textAlign": "center",
           "originX": "center",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 900,
+          "serif": true
         },
         {
           "type": "photo",
@@ -3600,7 +3966,9 @@
           "textAlign": "left",
           "originX": "left",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -3615,7 +3983,9 @@
           "textAlign": "left",
           "originX": "left",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -3630,7 +4000,9 @@
           "textAlign": "center",
           "originX": "center",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -3645,7 +4017,9 @@
           "textAlign": "left",
           "originX": "left",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -3660,7 +4034,9 @@
           "textAlign": "right",
           "originX": "right",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -3675,7 +4051,9 @@
           "textAlign": "right",
           "originX": "right",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "seal",
@@ -3716,13 +4094,15 @@
       },
       "defaults": {
         "title": "奖状",
+        "label": "",
         "name": "张小明",
         "suffix": "小朋友",
         "reason": "像小兔子一样活泼可爱、快乐成长，",
         "honor": "快乐小天使",
         "closing": "特发此表扬状！",
         "issuer": "幼儿园教务处",
-        "date": "2026年7月17日"
+        "date": "2026年7月17日",
+        "sealText": "幼儿园教务处"
       },
       "layers": [
         {
@@ -3738,7 +4118,9 @@
           "textAlign": "center",
           "originX": "center",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 900,
+          "serif": true
         },
         {
           "type": "photo",
@@ -3765,7 +4147,9 @@
           "textAlign": "left",
           "originX": "left",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -3780,7 +4164,9 @@
           "textAlign": "left",
           "originX": "left",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -3795,7 +4181,9 @@
           "textAlign": "center",
           "originX": "center",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -3810,7 +4198,9 @@
           "textAlign": "left",
           "originX": "left",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -3825,7 +4215,9 @@
           "textAlign": "right",
           "originX": "right",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -3840,7 +4232,9 @@
           "textAlign": "right",
           "originX": "right",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "seal",
@@ -3881,13 +4275,15 @@
       },
       "defaults": {
         "title": "奖状",
+        "label": "",
         "name": "张小明",
         "suffix": "小朋友",
         "reason": "充满好奇心与探索精神，像小恐龙一样勇往直前！",
         "honor": "探索小勇士",
         "closing": "特发此表扬状。",
         "issuer": "幼儿园园长室",
-        "date": "2026年7月17日"
+        "date": "2026年7月17日",
+        "sealText": "幼儿园园长室"
       },
       "layers": [
         {
@@ -3903,7 +4299,9 @@
           "textAlign": "center",
           "originX": "center",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 900,
+          "serif": true
         },
         {
           "type": "photo",
@@ -3930,7 +4328,9 @@
           "textAlign": "left",
           "originX": "left",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -3945,7 +4345,9 @@
           "textAlign": "left",
           "originX": "left",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -3960,7 +4362,9 @@
           "textAlign": "center",
           "originX": "center",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -3975,7 +4379,9 @@
           "textAlign": "left",
           "originX": "left",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -3990,7 +4396,9 @@
           "textAlign": "right",
           "originX": "right",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -4005,7 +4413,9 @@
           "textAlign": "right",
           "originX": "right",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "seal",
@@ -4035,13 +4445,15 @@
       "photo": null,
       "defaults": {
         "title": "荣誉证书",
+        "label": "",
         "name": "张小明",
         "suffix": "小朋友",
         "reason": "在梦幻世界中展现独特才华与无限想象力，",
         "honor": "创意小达人",
         "closing": "特颁此证，以资鼓励。",
         "issuer": "魔法学院院长",
-        "date": "2026年7月17日"
+        "date": "2026年7月17日",
+        "sealText": "魔法学院院长"
       },
       "layers": [
         {
@@ -4057,7 +4469,9 @@
           "textAlign": "center",
           "originX": "center",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 900,
+          "serif": true
         },
         {
           "type": "text",
@@ -4072,7 +4486,9 @@
           "textAlign": "left",
           "originX": "left",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -4087,7 +4503,9 @@
           "textAlign": "left",
           "originX": "left",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -4102,7 +4520,9 @@
           "textAlign": "center",
           "originX": "center",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -4117,7 +4537,9 @@
           "textAlign": "left",
           "originX": "left",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -4132,7 +4554,9 @@
           "textAlign": "right",
           "originX": "right",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -4147,7 +4571,9 @@
           "textAlign": "right",
           "originX": "right",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "seal",
@@ -4188,13 +4614,15 @@
       },
       "defaults": {
         "title": "奖状",
+        "label": "",
         "name": "张小明",
         "suffix": "小朋友",
         "reason": "像小猫咪一样聪明伶俐、温暖贴心，",
         "honor": "贴心小棉袄",
         "closing": "特发此表扬状！",
         "issuer": "幼儿园园长室",
-        "date": "2026年7月17日"
+        "date": "2026年7月17日",
+        "sealText": "幼儿园园长室"
       },
       "layers": [
         {
@@ -4210,7 +4638,9 @@
           "textAlign": "center",
           "originX": "center",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 900,
+          "serif": true
         },
         {
           "type": "photo",
@@ -4237,7 +4667,9 @@
           "textAlign": "left",
           "originX": "left",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -4252,7 +4684,9 @@
           "textAlign": "left",
           "originX": "left",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -4267,7 +4701,9 @@
           "textAlign": "center",
           "originX": "center",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -4282,7 +4718,9 @@
           "textAlign": "left",
           "originX": "left",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -4297,7 +4735,9 @@
           "textAlign": "right",
           "originX": "right",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -4312,7 +4752,9 @@
           "textAlign": "right",
           "originX": "right",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "seal",
@@ -4353,13 +4795,15 @@
       },
       "defaults": {
         "title": "奖状",
+        "label": "",
         "name": "张小明",
         "suffix": "小朋友",
         "reason": "像大海一样宽广包容、勇敢探索未知世界！",
         "honor": "海洋小探险家",
         "closing": "特发此表扬状。",
         "issuer": "海洋探险队",
-        "date": "2026年7月17日"
+        "date": "2026年7月17日",
+        "sealText": "海洋探险队"
       },
       "layers": [
         {
@@ -4375,7 +4819,9 @@
           "textAlign": "center",
           "originX": "center",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 900,
+          "serif": true
         },
         {
           "type": "photo",
@@ -4402,7 +4848,9 @@
           "textAlign": "left",
           "originX": "left",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -4417,7 +4865,9 @@
           "textAlign": "left",
           "originX": "left",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -4432,7 +4882,9 @@
           "textAlign": "center",
           "originX": "center",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -4447,7 +4899,9 @@
           "textAlign": "left",
           "originX": "left",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -4462,7 +4916,9 @@
           "textAlign": "right",
           "originX": "right",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "text",
@@ -4477,7 +4933,9 @@
           "textAlign": "right",
           "originX": "right",
           "originY": "center",
-          "lineHeight": 1.5
+          "lineHeight": 1.5,
+          "charSpacing": 0,
+          "serif": true
         },
         {
           "type": "seal",

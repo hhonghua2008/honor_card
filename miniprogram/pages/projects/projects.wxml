@@ -1,7 +1,12 @@
 <view class="page">
+  <view class="tools">
+    <button size="mini" class="cbtn ghost" bindtap="exportBackup">导出备份</button>
+    <button size="mini" class="cbtn ghost" bindtap="importBackup">导入备份</button>
+  </view>
+
   <view wx:if="{{empty}}" class="empty">
     <text class="t">还没有草稿</text>
-    <text class="s">在模板页选一套，编辑后点「保存草稿」</text>
+    <text class="s">在模板页选一套，编辑后点「保存」</text>
     <button class="btn primary" bindtap="goTemplates">去选模板</button>
   </view>
 

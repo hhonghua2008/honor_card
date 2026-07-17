@@ -19,6 +19,10 @@
       <text class="label">标题</text>
       <input class="input" data-key="title" value="{{fields.title}}" bindinput="onField" />
     </view>
+    <view class="row" wx:if="{{hasLabel}}">
+      <text class="label">称呼前缀（如：兹证明 / 亲爱的）</text>
+      <input class="input" data-key="label" value="{{fields.label}}" bindinput="onField" />
+    </view>
     <view class="row twin">
       <view class="half">
         <text class="label">姓名</text>
@@ -51,10 +55,15 @@
         <input class="input" data-key="date" value="{{fields.date}}" bindinput="onField" />
       </view>
     </view>
+    <view class="row">
+      <text class="label">印章文字</text>
+      <input class="input" data-key="sealText" value="{{fields.sealText}}" bindinput="onField" maxlength="10" />
+    </view>
   </view>
 
-  <view class="actions">
-    <button class="btn ghost" bindtap="saveProject">保存草稿</button>
-    <button class="btn primary" bindtap="exportImage">导出 / 分享</button>
+  <view class="actions actions-3">
+    <button class="btn ghost" bindtap="saveProject">保存</button>
+    <button class="btn ghost" bindtap="goBatch">批量</button>
+    <button class="btn primary" bindtap="exportImage">导出</button>
   </view>
 </view>

@@ -7,15 +7,18 @@ Page({
     tplId: '',
     tplName: '',
     hasPhoto: false,
+    hasLabel: false,
     fields: {
       title: '',
+      label: '',
       name: '',
       suffix: '',
       reason: '',
       honor: '',
       closing: '',
       issuer: '',
-      date: ''
+      date: '',
+      sealText: ''
     },
     photoPath: '',
     canvasStyle: '',
@@ -59,14 +62,18 @@ Page({
     const dispW = Math.floor(tpl.canvas.w * scale);
     const dispH = Math.floor(tpl.canvas.h * scale);
 
+    if (!fields.sealText) fields.sealText = fields.issuer || tpl.defaults.sealText || '荣誉专用章';
+    if (fields.label == null) fields.label = tpl.defaults.label || '';
+
     this.setData({
       tplId: tpl.id,
       tplName: tpl.name,
       hasPhoto: !!tpl.hasPhoto,
+      hasLabel: !!(fields.label || tpl.defaults.label),
       fields,
       photoPath,
       canvasStyle: 'width:' + dispW + 'px;height:' + dispH + 'px;',
-      tip: tpl.hasPhoto ? '可改文字、上传照片，预览后保存到相册或分享' : '修改文字后保存到相册或分享给好友'
+      tip: '改字即预览 · 可批量名单出图 · 导出保存到相册'
     });
     wx.setNavigationBarTitle({ title: tpl.name });
   },
@@ -208,6 +215,15 @@ Page({
       thumb: this._tpl.thumbUrl
     });
     wx.showToast({ title: '已保存到「我的」', icon: 'success' });
+  },
+
+  goBatch() {
+    const fields = encodeURIComponent(JSON.stringify(this.data.fields));
+    let url = '/pages/batch/batch?tpl=' + encodeURIComponent(this.data.tplId) + '&fields=' + fields;
+    if (this.data.photoPath) {
+      url += '&photo=' + encodeURIComponent(this.data.photoPath);
+    }
+    wx.navigateTo({ url });
   },
 
   async exportImage() {
