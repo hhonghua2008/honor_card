@@ -1,7 +1,13 @@
 <view class="page">
-  <view class="preview-wrap">
-    <canvas type="2d" id="certCanvas" class="canvas" style="{{canvasStyle}}"></canvas>
-    <view wx:if="{{rendering}}" class="preview-mask">绘制中…</view>
+  <view class="preview-wrap" style="{{canvasStyle}}">
+    <image
+      wx:if="{{showThumb && thumbUrl}}"
+      class="thumb-placeholder"
+      src="{{thumbUrl}}"
+      mode="aspectFill"
+    />
+    <canvas type="2d" id="certCanvas" class="canvas" style="{{canvasStyle}};{{showThumb ? 'opacity:0;' : ''}}"></canvas>
+    <view wx:if="{{loadHint || rendering}}" class="preview-mask">{{loadHint || '更新中…'}}</view>
   </view>
 
   <view class="tip">{{tip}}</view>

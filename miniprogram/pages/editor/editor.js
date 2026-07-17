@@ -1,6 +1,7 @@
 const catalog = require('../../utils/catalog');
 const { renderCertificate } = require('../../utils/draw');
 const projects = require('../../utils/projects');
+const assetCache = require('../../utils/asset-cache');
 
 Page({
   data: {
@@ -22,8 +23,10 @@ Page({
     },
     photoPath: '',
     canvasStyle: '',
+    thumbUrl: '',
+    showThumb: true,
     rendering: false,
-    ready: false,
+    loadHint: '正在加载模板…',
     tip: ''
   },
 
@@ -31,8 +34,13 @@ Page({
   _canvas: null,
   _ctx: null,
   _bgPath: '',
+  _bgPromise: null,
   _projId: '',
   _timer: null,
+  _dispW: 300,
+  _dispH: 450,
+  _previewScale: 1,
+  _exportMode: false,
 
   onLoad(query) {
     const tplId = query.tpl || 'tpl-01';
@@ -59,11 +67,15 @@ Page({
     const sys = wx.getSystemInfoSync();
     const maxW = sys.windowWidth - 32;
     const scale = maxW / tpl.canvas.w;
-    const dispW = Math.floor(tpl.canvas.w * scale);
-    const dispH = Math.floor(tpl.canvas.h * scale);
+    this._dispW = Math.floor(tpl.canvas.w * scale);
+    this._dispH = Math.floor(tpl.canvas.h * scale);
+    this._previewScale = scale;
 
     if (!fields.sealText) fields.sealText = fields.issuer || tpl.defaults.sealText || '荣誉专用章';
     if (fields.label == null) fields.label = tpl.defaults.label || '';
+
+    // 立刻展示缩略图占位；同时开始下背景（与画布初始化并行）
+    this._bgPromise = assetCache.getCachedFile(tpl.bgUrl, 'bg_' + tpl.id);
 
     this.setData({
       tplId: tpl.id,
@@ -72,28 +84,42 @@ Page({
       hasLabel: !!(fields.label || tpl.defaults.label),
       fields,
       photoPath,
-      canvasStyle: 'width:' + dispW + 'px;height:' + dispH + 'px;',
+      thumbUrl: tpl.thumbUrl,
+      showThumb: true,
+      loadHint: '正在加载高清预览…',
+      canvasStyle: 'width:' + this._dispW + 'px;height:' + this._dispH + 'px;',
       tip: '改字即预览 · 可批量名单出图 · 导出保存到相册'
     });
     wx.setNavigationBarTitle({ title: tpl.name });
   },
 
   onReady() {
-    this.initCanvas().then(() => {
-      this.setData({ ready: true });
-      this.scheduleRender(0);
-    }).catch(err => {
-      console.error(err);
-      this.setData({ tip: '画布初始化失败，请检查网络与域名配置' });
-      wx.showToast({ title: '画布失败', icon: 'none' });
-    });
+    Promise.all([this.initCanvas(false), this._bgPromise])
+      .then(([, bgPath]) => {
+        this._bgPath = bgPath;
+        return this.doRender(true);
+      })
+      .then(() => {
+        this.setData({ showThumb: false, loadHint: '' });
+      })
+      .catch(err => {
+        console.error(err);
+        this.setData({
+          loadHint: '高清预览加载失败，可检查网络后重试',
+          showThumb: true
+        });
+        wx.showToast({ title: '预览加载慢/失败', icon: 'none' });
+      });
   },
 
   onUnload() {
     if (this._timer) clearTimeout(this._timer);
   },
 
-  initCanvas() {
+  /**
+   * @param {boolean} full 是否全分辨率（导出用）
+   */
+  initCanvas(full) {
     const tpl = this._tpl;
     return new Promise((resolve, reject) => {
       const q = wx.createSelectorQuery();
@@ -106,10 +132,21 @@ Page({
           }
           const canvas = res[0].node;
           const ctx = canvas.getContext('2d');
-          const dpr = wx.getSystemInfoSync().pixelRatio || 2;
-          canvas.width = tpl.canvas.w * dpr;
-          canvas.height = tpl.canvas.h * dpr;
-          ctx.scale(dpr, dpr);
+          const dpr = Math.min(wx.getSystemInfoSync().pixelRatio || 2, 2);
+          if (full) {
+            canvas.width = tpl.canvas.w * dpr;
+            canvas.height = tpl.canvas.h * dpr;
+            ctx.setTransform(1, 0, 0, 1, 0, 0);
+            ctx.scale(dpr, dpr);
+            this._exportMode = true;
+          } else {
+            // 预览只按屏幕宽度绘制，大幅降低首屏耗时
+            canvas.width = this._dispW * dpr;
+            canvas.height = this._dispH * dpr;
+            ctx.setTransform(1, 0, 0, 1, 0, 0);
+            ctx.scale(dpr * this._previewScale, dpr * this._previewScale);
+            this._exportMode = false;
+          }
           this._canvas = canvas;
           this._ctx = ctx;
           resolve();
@@ -119,35 +156,33 @@ Page({
 
   ensureBg() {
     if (this._bgPath) return Promise.resolve(this._bgPath);
-    const url = this._tpl.bgUrl;
-    return new Promise((resolve, reject) => {
-      wx.downloadFile({
-        url,
-        success: r => {
-          if (r.statusCode === 200) {
-            this._bgPath = r.tempFilePath;
-            resolve(this._bgPath);
-          } else reject(new Error('bg download ' + r.statusCode));
-        },
-        fail: reject
-      });
+    if (!this._bgPromise) {
+      this._bgPromise = assetCache.getCachedFile(this._tpl.bgUrl, 'bg_' + this._tpl.id);
+    }
+    return this._bgPromise.then(p => {
+      this._bgPath = p;
+      return p;
     });
   },
 
   scheduleRender(delay) {
     if (this._timer) clearTimeout(this._timer);
-    this._timer = setTimeout(() => this.doRender(), delay == null ? 280 : delay);
+    this._timer = setTimeout(() => this.doRender(false), delay == null ? 180 : delay);
   },
 
-  async doRender() {
+  async doRender(isFirst) {
     if (!this._canvas || !this._ctx || !this._tpl) return;
-    if (this.data.rendering) {
-      this.scheduleRender(200);
+    if (this.data.rendering && !isFirst) {
+      this.scheduleRender(120);
       return;
     }
     this.setData({ rendering: true });
     try {
       const bgPath = await this.ensureBg();
+      // 若上次导出切到了全分辨率，预览前切回低分辨率
+      if (this._exportMode && !isFirst) {
+        await this.initCanvas(false);
+      }
       await renderCertificate({
         canvas: this._canvas,
         ctx: this._ctx,
@@ -158,7 +193,9 @@ Page({
       });
     } catch (e) {
       console.error('render fail', e);
-      wx.showToast({ title: '预览失败，检查域名', icon: 'none' });
+      if (!this.data.showThumb) {
+        wx.showToast({ title: '预览失败', icon: 'none' });
+      }
     } finally {
       this.setData({ rendering: false });
     }
@@ -206,7 +243,7 @@ Page({
     if (photoPath && photoPath !== this.data.photoPath) {
       this.setData({ photoPath });
     }
-    const proj = projects.upsert({
+    projects.upsert({
       id: this._projId,
       tplId: this.data.tplId,
       name: (this.data.fields.name || '未命名') + ' · ' + this.data.tplName,
@@ -214,12 +251,7 @@ Page({
       photoPath,
       thumb: this._tpl.thumbUrl
     });
-    if (cloud.enabled()) {
-      const r = await cloud.pushOne(proj);
-      wx.showToast({ title: r.ok ? '已保存并同步云端' : '已保存（云同步失败）', icon: 'none' });
-    } else {
-      wx.showToast({ title: '已保存到「我的」', icon: 'success' });
-    }
+    wx.showToast({ title: '已保存到「我的」', icon: 'success' });
   },
 
   goBatch() {
@@ -233,26 +265,48 @@ Page({
 
   async exportImage() {
     if (!this._canvas) return;
-    await this.doRender();
-    wx.canvasToTempFilePath({
-      canvas: this._canvas,
-      destWidth: this._tpl.canvas.w,
-      destHeight: this._tpl.canvas.h,
-      fileType: 'png',
-      success: res => {
-        wx.showActionSheet({
-          itemList: ['保存到相册', '预览并转发'],
-          success: a => {
-            if (a.tapIndex === 0) this.saveAlbum(res.tempFilePath);
-            if (a.tapIndex === 1) this.shareImage(res.tempFilePath);
-          }
+    wx.showLoading({ title: '导出中', mask: true });
+    try {
+      await this.initCanvas(true);
+      const bgPath = await this.ensureBg();
+      await renderCertificate({
+        canvas: this._canvas,
+        ctx: this._ctx,
+        tpl: this._tpl,
+        fields: this.data.fields,
+        bgPath,
+        photoPath: this.data.photoPath || ''
+      });
+      await new Promise((resolve, reject) => {
+        wx.canvasToTempFilePath({
+          canvas: this._canvas,
+          destWidth: this._tpl.canvas.w,
+          destHeight: this._tpl.canvas.h,
+          fileType: 'png',
+          success: res => {
+            wx.hideLoading();
+            wx.showActionSheet({
+              itemList: ['保存到相册', '预览并转发'],
+              success: a => {
+                if (a.tapIndex === 0) this.saveAlbum(res.tempFilePath);
+                if (a.tapIndex === 1) this.shareImage(res.tempFilePath);
+              },
+              complete: () => {
+                // 恢复预览分辨率
+                this.initCanvas(false).then(() => this.doRender(false));
+              }
+            });
+            resolve();
+          },
+          fail: reject
         });
-      },
-      fail: err => {
-        console.error(err);
-        wx.showToast({ title: '导出失败', icon: 'none' });
-      }
-    });
+      });
+    } catch (e) {
+      wx.hideLoading();
+      console.error(e);
+      wx.showToast({ title: '导出失败', icon: 'none' });
+      this.initCanvas(false).then(() => this.doRender(false));
+    }
   },
 
   saveAlbum(filePath) {
@@ -274,7 +328,6 @@ Page({
   },
 
   shareImage(filePath) {
-    // 展示图片，用户可长按转发；同时提供预览
     wx.previewImage({ urls: [filePath], current: filePath });
     wx.showToast({ title: '长按图片可转发', icon: 'none' });
   },

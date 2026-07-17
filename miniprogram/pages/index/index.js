@@ -3,6 +3,7 @@ const {
   ORIENT_FILTERS
 } = require('../../utils/config');
 const catalog = require('../../utils/catalog');
+const assetCache = require('../../utils/asset-cache');
 
 Page({
   data: {
@@ -66,6 +67,9 @@ Page({
 
   openTpl(e) {
     const id = e.currentTarget.dataset.id;
+    const tpl = catalog.getById(id);
+    // 跳转前预取背景，编辑页可秒开缓存
+    if (tpl && tpl.bgUrl) assetCache.prefetch(tpl.bgUrl, 'bg_' + tpl.id);
     wx.navigateTo({ url: '/pages/editor/editor?tpl=' + encodeURIComponent(id) });
   },
 
