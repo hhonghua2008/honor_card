@@ -32,6 +32,12 @@ Page({
     this.setData({ loading: true });
     let allList = await catalog.fetchRemoteCatalog();
     if (!allList) allList = catalog.loadBuiltin();
+    // 经典模板置顶，方便发现
+    allList = allList.slice().sort((a, b) => {
+      const ac = /经典/.test(a.name + a.category) ? 0 : 1;
+      const bc = /经典/.test(b.name + b.category) ? 0 : 1;
+      return ac - bc;
+    });
     this._allList = allList;
     this.applyFilters();
     this.setData({ loading: false, total: allList.length, allList });

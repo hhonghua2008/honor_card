@@ -221,19 +221,21 @@
 
   // ===== 横版构建器 =====
   function buildLand(opts) {
-    const W = 1216, H = 712, cx = W / 2;
-    const M = 240;
+    const W = opts.canvasW || 1216, H = opts.canvasH || 712, cx = W / 2;
+    const M = opts.margin || 240;
     const t = themeOf(opts);
     const c = resolveContent(opts);
     const recipient = c.sampleName + ' ' + c.suffix + '：';
     const honor = c.honor;
     const hasH = !!honor;
     const sealText = opts.issuer || opts.sealText || '荣誉颁发';
-    const layers = [
-      txt('title', (opts.title || '荣 誉 证 书').replace(/\s+/g, ''), cx, 90, {
-        fontSize: 58, fontWeight: 'bold', fontFamily: SERIF, fill: accentFill(t), charSpacing: TITLE_CS_H
-      })
-    ];
+    const layers = [];
+    // 背景已含「奖状」大字时跳过标题层，避免叠字
+    if (!opts.titleInBg) {
+      layers.push(txt('title', (opts.title || '荣 誉 证 书').replace(/\s+/g, ''), cx, opts.titleTop || 90, {
+        fontSize: opts.titleSize || 58, fontWeight: 'bold', fontFamily: SERIF, fill: accentFill(t), charSpacing: TITLE_CS_H
+      }));
+    }
     if (opts.photo) {
       layers.push(photo('photo', opts.photo ? 'square' : (opts.mask || 'circle'), 240, 360, opts.size || 190, opts.frame));
       layers.push(txt('recipient', recipient, 400, 200, { fontSize: 40, fontWeight: 'bold', fontFamily: SERIF, fill: bodyFill(t), originX: 'left', textAlign: 'left' }));
@@ -247,11 +249,14 @@
       if (hasH) layers.push(txt('honor', honor, cx, 480, { fontSize: 46, fontWeight: 'bold', fontFamily: SERIF, fill: accentFill(t) }));
       layers.push(box('closing', c.closing, M, 602, W - 2 * M, { fontSize: 32, fontFamily: SANS, fill: bodyFill(t), lineHeight: 1.5, originX: 'left', textAlign: 'left' }));
     }
-    layers.push(txt('issuer', opts.issuer || 'HonorCard 荣誉颁发', W - 240, hasH ? 610 : 630, { fontSize: 22, fontFamily: SANS, fill: mutedFill(t), originX: 'right', textAlign: 'right' }));
-    layers.push(txt('date', today(), W - 240, hasH ? 652 : 668, { fontSize: 24, fontFamily: SANS, fill: mutedFill(t), originX: 'right', textAlign: 'right' }));
-    layers.push(seal('seal', sealText, W - 256, hasH ? 510 : 530, 120, '#c1272d'));
+    const issuerY = opts.issuerY != null ? opts.issuerY : (hasH ? H - 102 : H - 82);
+    const dateY = opts.dateY != null ? opts.dateY : (hasH ? H - 60 : H - 44);
+    const sealY = opts.sealY != null ? opts.sealY : (hasH ? H - 202 : H - 182);
+    layers.push(txt('issuer', opts.issuer || 'HonorCard 荣誉颁发', W - 240, issuerY, { fontSize: 22, fontFamily: SANS, fill: mutedFill(t), originX: 'right', textAlign: 'right' }));
+    layers.push(txt('date', today(), W - 240, dateY, { fontSize: 24, fontFamily: SANS, fill: mutedFill(t), originX: 'right', textAlign: 'right' }));
+    layers.push(seal('seal', sealText, W - 256, sealY, 120, '#c1272d'));
     return packTemplate(Object.assign({}, opts, { layout: opts.layout || 'landscape' }), {
-      category: opts.photo ? '照片奖状（横版）' : '荣誉证书（横版）',
+      category: opts.category || (opts.photo ? '照片奖状（横版）' : '荣誉证书（横版）'),
       tags: (opts.tags || []).concat(['横版']),
       canvas: { w: W, h: H }, themePresets: t, layers
     });
@@ -481,7 +486,40 @@
       title: '奖 状', label: '亲爱的', reason: '像大海一样宽广包容、勇敢探索未知世界！', honor: '海洋小探险家', closing: '特发此表扬状。',
       tags: ['可爱', '海洋', '照片', '横版'],
       theme: [themePreset('珊瑚红', '#e85d75', '#1a4a5a', '#2a6070'), themePreset('海蓝白', '#ffffff', '#2a6070', '#1a5060')],
-      issuer: '海洋探险队' })
+      issuer: '海洋探险队' }),
+
+    // —— 经典校园横版（对标主流小程序「经典奖状」）——
+    buildLand({
+      id: 'tpl-29', name: '经典绿边红星', bg: 'tpl-29-land-classic-green.png',
+      titleInBg: true, canvasW: 1216, canvasH: 812, margin: 220,
+      category: '经典奖状（横版）', sceneCategory: 'campus',
+      suffix: '同学',
+      reason: '在2024-2025学年第二学期中表现优秀，被评为',
+      honor: '学习标兵',
+      closing: '特发此状，以资鼓励！',
+      tags: ['经典', '校园', '绿边', '红星', '横版'],
+      theme: [
+        themePreset('中国红', '#c1272d', '#2a2a2a', '#4a4a4a'),
+        themePreset('墨绿金', '#1a5c3a', '#222', '#555')
+      ],
+      issuer: '光明小学五年级一班', sealText: '奖状专用章'
+    }),
+
+    buildLand({
+      id: 'tpl-30', name: '经典红金牡丹', bg: 'tpl-30-land-classic-peony.png',
+      titleInBg: true, canvasW: 1216, canvasH: 812, margin: 220,
+      category: '经典奖状（横版）', sceneCategory: 'campus',
+      suffix: '同学',
+      reason: '在2024-2025学年第二学期中表现优秀，被评为',
+      honor: '三好学生',
+      closing: '特发此状，以资鼓励！',
+      tags: ['经典', '校园', '红金', '牡丹', '横版'],
+      theme: [
+        themePreset('中国红', '#c1272d', '#3a2a12', '#5a4030'),
+        themePreset('烫金', '#b8860b', '#3a2a12', '#5a4030')
+      ],
+      issuer: '光明小学五年级一班', sealText: '奖状专用章'
+    })
   ];
 
   window.HC_TEMPLATES = TEMPLATES;

@@ -1,7 +1,7 @@
 <view class="page">
   <view class="hero">
     <text class="title">选择奖状模板</text>
-    <text class="sub">共 {{total}} 套 · 点选即可改字换照片 · 导出到相册</text>
+    <text class="sub">共 {{total}} 套 · 含经典校园奖状 · 改字即可导出</text>
   </view>
 
   <view class="toolbar">

@@ -2,6 +2,7 @@ const catalog = require('../../utils/catalog');
 const { renderCertificate } = require('../../utils/draw');
 const projects = require('../../utils/projects');
 const assetCache = require('../../utils/asset-cache');
+const presets = require('../../utils/presets');
 
 Page({
   data: {
@@ -9,6 +10,8 @@ Page({
     tplName: '',
     hasPhoto: false,
     hasLabel: false,
+    titleInBg: false,
+    editTab: 'content',
     fields: {
       title: '',
       label: '',
@@ -77,20 +80,45 @@ Page({
     // 立刻展示缩略图占位；同时开始下背景（与画布初始化并行）
     this._bgPromise = assetCache.getCachedFile(tpl.bgUrl, 'bg_' + tpl.id);
 
+    const titleInBg = !(tpl.layers || []).some(l => l.type === 'text' && l.id === 'title');
     this.setData({
       tplId: tpl.id,
       tplName: tpl.name,
       hasPhoto: !!tpl.hasPhoto,
       hasLabel: !!(fields.label || tpl.defaults.label),
+      titleInBg,
+      editTab: 'content',
       fields,
       photoPath,
       thumbUrl: tpl.thumbUrl,
       showThumb: true,
       loadHint: '正在加载高清预览…',
-      canvasStyle: 'width:' + this._dispW + 'px;height:' + this._dispH + 'px;',
-      tip: '改字即预览 · 可批量名单出图 · 导出保存到相册'
+      canvasStyle: 'width:' + this._dispW + 'px;height:' + this._dispH + 'px;'
     });
     wx.setNavigationBarTitle({ title: tpl.name });
+  },
+
+  switchTab(e) {
+    this.setData({ editTab: e.currentTarget.dataset.tab });
+  },
+
+  async pickPreset(e) {
+    const kind = e.currentTarget.dataset.preset;
+    const map = {
+      suffix: presets.SUFFIX_PRESETS,
+      honor: presets.HONOR_PRESETS,
+      reason: presets.REASON_PRESETS,
+      closing: presets.CLOSING_PRESETS,
+      issuer: presets.ISSUER_PRESETS
+    };
+    const list = map[kind];
+    if (!list) return;
+    const val = await presets.pick('选择', list);
+    if (!val) return;
+    let next = val;
+    if (kind === 'suffix') next = String(val).replace(/：$/, '');
+    this.setData({ ['fields.' + kind]: next });
+    this.scheduleRender(50);
   },
 
   onReady() {

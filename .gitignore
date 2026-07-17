@@ -14,3 +14,4 @@ miniprogram/private/
 # 模板生成中间产物（不部署）
 assets/templates/_gen/
 assets/templates/l13/
+miniprogram/project.private.config.json

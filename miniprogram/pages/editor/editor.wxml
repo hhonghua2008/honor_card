@@ -10,23 +10,19 @@
     <view wx:if="{{loadHint || rendering}}" class="preview-mask">{{loadHint || '更新中…'}}</view>
   </view>
 
-  <view class="tip">{{tip}}</view>
+  <view class="tabs">
+    <view class="tab {{editTab==='content'?'on':''}}" data-tab="content" bindtap="switchTab">姓名/内容</view>
+    <view class="tab {{editTab==='seal'?'on':''}}" data-tab="seal" bindtap="switchTab">署名/印章</view>
+    <view class="tab {{editTab==='photo'?'on':''}}" data-tab="photo" bindtap="switchTab">照片/说明</view>
+  </view>
 
-  <view class="form">
-    <view class="row" wx:if="{{hasPhoto}}">
-      <text class="label">照片</text>
-      <view class="photo-actions">
-        <button size="mini" class="mini" bindtap="choosePhoto">{{photoPath ? '更换照片' : '上传照片'}}</button>
-        <button size="mini" class="mini ghost" wx:if="{{photoPath}}" bindtap="clearPhoto">清除</button>
-      </view>
-    </view>
-
-    <view class="row">
+  <view class="form" wx:if="{{editTab==='content'}}">
+    <view class="row" wx:if="{{!titleInBg}}">
       <text class="label">标题</text>
       <input class="input" data-key="title" value="{{fields.title}}" bindinput="onField" />
     </view>
     <view class="row" wx:if="{{hasLabel}}">
-      <text class="label">称呼前缀（如：兹证明 / 亲爱的）</text>
+      <text class="label">称呼前缀</text>
       <input class="input" data-key="label" value="{{fields.label}}" bindinput="onField" />
     </view>
     <view class="row twin">
@@ -35,36 +31,65 @@
         <input class="input" data-key="name" value="{{fields.name}}" bindinput="onField" />
       </view>
       <view class="half">
-        <text class="label">称呼</text>
-        <input class="input" data-key="suffix" value="{{fields.suffix}}" bindinput="onField" placeholder="同学" />
+        <view class="label-row">
+          <text class="label">称呼</text>
+          <text class="pick" data-preset="suffix" bindtap="pickPreset">选择</text>
+        </view>
+        <input class="input" data-key="suffix" value="{{fields.suffix}}" bindinput="onField" />
       </view>
     </view>
     <view class="row">
-      <text class="label">荣誉称号</text>
+      <view class="label-row">
+        <text class="label">荣誉称号</text>
+        <text class="pick" data-preset="honor" bindtap="pickPreset">选择</text>
+      </view>
       <input class="input" data-key="honor" value="{{fields.honor}}" bindinput="onField" placeholder="可留空" />
     </view>
     <view class="row">
-      <text class="label">正文</text>
+      <view class="label-row">
+        <text class="label">正文</text>
+        <text class="pick" data-preset="reason" bindtap="pickPreset">选择</text>
+      </view>
       <textarea class="textarea" data-key="reason" value="{{fields.reason}}" bindinput="onField" auto-height maxlength="200" />
     </view>
     <view class="row">
-      <text class="label">结束语</text>
+      <view class="label-row">
+        <text class="label">结束语</text>
+        <text class="pick" data-preset="closing" bindtap="pickPreset">选择</text>
+      </view>
       <textarea class="textarea" data-key="closing" value="{{fields.closing}}" bindinput="onField" auto-height maxlength="80" />
     </view>
-    <view class="row twin">
-      <view class="half">
-        <text class="label">颁发单位</text>
-        <input class="input" data-key="issuer" value="{{fields.issuer}}" bindinput="onField" />
+  </view>
+
+  <view class="form" wx:if="{{editTab==='seal'}}">
+    <view class="row">
+      <view class="label-row">
+        <text class="label">颁发单位 / 署名</text>
+        <text class="pick" data-preset="issuer" bindtap="pickPreset">选择</text>
       </view>
-      <view class="half">
-        <text class="label">日期</text>
-        <input class="input" data-key="date" value="{{fields.date}}" bindinput="onField" />
-      </view>
+      <input class="input" data-key="issuer" value="{{fields.issuer}}" bindinput="onField" />
     </view>
     <view class="row">
-      <text class="label">印章文字</text>
+      <text class="label">日期</text>
+      <input class="input" data-key="date" value="{{fields.date}}" bindinput="onField" />
+    </view>
+    <view class="row">
+      <text class="label">印章文字（环形）</text>
       <input class="input" data-key="sealText" value="{{fields.sealText}}" bindinput="onField" maxlength="10" />
     </view>
+    <view class="hint-box">署名与印章显示在奖状右下角；导出图片不含小程序水印。</view>
+  </view>
+
+  <view class="form" wx:if="{{editTab==='photo'}}">
+    <view class="row" wx:if="{{hasPhoto}}">
+      <text class="label">照片</text>
+      <view class="photo-actions">
+        <button size="mini" class="mini" bindtap="choosePhoto">{{photoPath ? '更换照片' : '上传照片'}}</button>
+        <button size="mini" class="mini ghost" wx:if="{{photoPath}}" bindtap="clearPhoto">清除</button>
+      </view>
+    </view>
+    <view class="hint-box" wx:else>当前为经典纯文字奖状，无需照片。可在「姓名/内容」填写获奖信息。</view>
+    <view class="hint-box">批量制作：先填好公共文案，再点底部「批量」粘贴花名册。</view>
   </view>
 
   <view class="actions actions-3">

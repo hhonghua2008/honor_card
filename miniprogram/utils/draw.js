@@ -257,6 +257,7 @@ async function renderCertificate(opts) {
   }
 
   layers.forEach(l => {
+    if (l.id === 'title' && !(l.text || '').trim()) return;
     if (l.id === 'honor' && !(fields.honor || '').trim()) return;
     if (l.id === 'recipient_label' && !(fields.label || l.text || '').trim()) return;
     if (l.type === 'text') drawTextLayer(ctx, l);
