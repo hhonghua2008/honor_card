@@ -1,0 +1,17 @@
+.DS_Store
+.workbuddy/
+node_modules/
+test/shots/
+test/node_modules/
+server/node_modules/
+server/data.json
+server/uploads/
+
+# 微信小程序上传密钥（勿提交）
+miniprogram/private/
+*.key
+
+# 模板生成中间产物（不部署）
+assets/templates/_gen/
+assets/templates/l13/
+miniprogram/project.private.config.json

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://hhonghua2008.github.io/honor_card/sitemap.xml
